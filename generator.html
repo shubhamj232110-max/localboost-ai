@@ -1,69 +1,127 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Create your free LocalBoost AI local business marketing plan.">
-  <title>Free Plan Generator | LocalBoost AI</title>
+
+  <title>Free Marketing Plan | LocalBoost AI</title>
+  <meta
+    name="description"
+    content="Apne local business ke liye personalized marketing plan request karein."
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
   <header class="navbar">
     <a href="index.html" class="logo">LocalBoost AI</a>
 
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="how-it-works.html">How it works</a>
       <a href="features.html">Features</a>
       <a href="pricing.html">Pricing</a>
       <a href="resources.html">Resources</a>
-      <a class="nav-cta" href="generator.html">Free plan banayein</a>
+      <a href="generator.html" class="nav-cta">Free plan banayein</a>
     </nav>
 
-    <button class="menu-button" aria-label="Open navigation menu">☰</button>
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Navigation menu kholen"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
   </header>
 
   <main>
     <section class="page-hero">
       <div class="page-hero-content">
         <p class="eyebrow">Free starter plan</p>
-        <h1>Apne business ka marketing plan shuru karein.</h1>
-        <p>Abhi yeh demo form hai. Next phase mein isko secure AI workflow aur email delivery se connect karenge.</p>
+
+        <h1>Apne business ke liye marketing plan request karein.</h1>
+
+        <p>
+          Apne business ki basic details bharein. Form submit hone ke baad
+          hum aapki request review karenge aur aapko next steps email karenge.
+        </p>
       </div>
     </section>
 
     <section class="section">
       <div class="generator-layout">
         <aside class="generator-info">
+          <p class="eyebrow" style="color:#b8c7ff;">LocalBoost AI</p>
+
           <h2>Aapko kya milega?</h2>
-          <p>Business details ke basis par ek useful local marketing plan banega.</p>
+
+          <p>
+            Aapki business details ke aadhar par ek practical local marketing
+            plan banane ki request bheji jayegi.
+          </p>
 
           <ul>
-            <li>✓ Content ideas for your category</li>
-            <li>✓ City and customer-focused marketing angle</li>
-            <li>✓ Caption and Reel suggestions</li>
-            <li>✓ Offer and WhatsApp campaign concepts</li>
+            <li>✓ Aapke business category ke liye content ideas</li>
+            <li>✓ City aur locality ke hisaab se marketing angles</li>
+            <li>✓ Caption aur Reel suggestions</li>
+            <li>✓ Offer aur WhatsApp campaign ideas</li>
           </ul>
+
+          <p class="form-note">
+            Note: Is demo version mein AI plan automatically generate nahi hota.
+            Pehle aapki request receive hogi.
+          </p>
         </aside>
 
-        <form class="generator-form" id="generatorForm">
+        <form
+          class="generator-form"
+          id="generatorForm"
+          action="https://formspree.io/f/mwlvoygo"
+          method="POST"
+        >
+          <input
+            type="hidden"
+            name="_subject"
+            value="New LocalBoost AI free-plan request"
+          >
+
+          <input
+            type="hidden"
+            name="source"
+            value="LocalBoost AI website generator page"
+          >
+
           <div class="form-row">
             <div class="form-field">
               <label for="businessName">Business name *</label>
-              <input id="businessName" type="text" placeholder="e.g. Glow & Go Salon" required>
+              <input
+                id="businessName"
+                name="business_name"
+                type="text"
+                placeholder="Example: Glow & Go Salon"
+                autocomplete="organization"
+                maxlength="100"
+                required
+              >
             </div>
 
             <div class="form-field">
               <label for="category">Business category *</label>
-              <select id="category" required>
-                <option value="">Select category</option>
-                <option>Salon / Beauty</option>
-                <option>Restaurant / Café / Bakery</option>
-                <option>Gym / Fitness / Yoga</option>
-                <option>Boutique / Fashion</option>
-                <option>Coaching / Education</option>
-                <option>Other local business</option>
+              <select
+                id="category"
+                name="business_category"
+                required
+              >
+                <option value="">Category select karein</option>
+                <option value="Salon / Beauty">Salon / Beauty</option>
+                <option value="Restaurant / Cafe / Bakery">Restaurant / Café / Bakery</option>
+                <option value="Gym / Fitness / Yoga">Gym / Fitness / Yoga</option>
+                <option value="Boutique / Fashion">Boutique / Fashion</option>
+                <option value="Coaching / Education">Coaching / Education</option>
+                <option value="Other local business">Other local business</option>
               </select>
             </div>
           </div>
@@ -71,56 +129,109 @@
           <div class="form-row">
             <div class="form-field">
               <label for="city">City *</label>
-              <input id="city" type="text" placeholder="e.g. Indore" required>
+              <input
+                id="city"
+                name="city"
+                type="text"
+                placeholder="Example: Indore"
+                autocomplete="address-level2"
+                maxlength="80"
+                required
+              >
             </div>
 
             <div class="form-field">
-              <label for="locality">Locality / Area</label>
-              <input id="locality" type="text" placeholder="e.g. Vijay Nagar">
+              <label for="locality">Locality / area</label>
+              <input
+                id="locality"
+                name="locality"
+                type="text"
+                placeholder="Example: Vijay Nagar"
+                maxlength="100"
+              >
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-field">
               <label for="goal">Main marketing goal *</label>
-              <select id="goal" required>
-                <option value="">Select goal</option>
-                <option>More WhatsApp enquiries</option>
-                <option>More bookings</option>
-                <option>More walk-ins</option>
-                <option>More repeat customers</option>
-                <option>More Instagram reach</option>
+              <select
+                id="goal"
+                name="marketing_goal"
+                required
+              >
+                <option value="">Goal select karein</option>
+                <option value="More WhatsApp enquiries">More WhatsApp enquiries</option>
+                <option value="More bookings">More bookings</option>
+                <option value="More walk-ins">More walk-ins</option>
+                <option value="More repeat customers">More repeat customers</option>
+                <option value="More Instagram reach">More Instagram reach</option>
               </select>
             </div>
 
             <div class="form-field">
               <label for="language">Preferred language *</label>
-              <select id="language" required>
-                <option value="">Select language</option>
-                <option>Hinglish</option>
-                <option>Hindi</option>
-                <option>English</option>
+              <select
+                id="language"
+                name="preferred_language"
+                required
+              >
+                <option value="">Language select karein</option>
+                <option value="Hinglish">Hinglish</option>
+                <option value="Hindi">Hindi</option>
+                <option value="English">English</option>
               </select>
             </div>
           </div>
 
           <div class="form-field">
-            <label for="offer">Main service or current offer</label>
-            <textarea id="offer" placeholder="e.g. First haircut at ₹299, free gym trial, weekday lunch combo"></textarea>
+            <label for="offer">Main service ya current offer</label>
+            <textarea
+              id="offer"
+              name="main_offer"
+              placeholder="Example: First haircut ₹299, free gym trial, weekday lunch combo"
+              maxlength="500"
+            ></textarea>
           </div>
 
           <div class="form-field">
             <label for="email">Email address *</label>
-            <input id="email" type="email" placeholder="you@example.com" required>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@example.com"
+              autocomplete="email"
+              maxlength="150"
+              required
+            >
           </div>
 
-          <label class="consent">
-            <input type="checkbox" required>
-            <span>I agree that LocalBoost AI can use these business details to create my plan and contact me about this request.</span>
+          <label class="consent" for="consent">
+            <input
+              id="consent"
+              name="consent"
+              type="checkbox"
+              value="I agree"
+              required
+            >
+            <span>
+              Main apni business details ka use meri plan request ke liye karne
+              ki permission deta/deti hoon. Mujhe pata hai ki is demo mein AI
+              plan automatically generate nahi hota.
+            </span>
           </label>
 
-          <button type="submit" class="button button-primary">Mera free plan generate karein →</button>
-          <p id="formMessage" class="form-message"></p>
+          <button type="submit" class="button button-primary">
+            Plan request submit karein →
+          </button>
+
+          <p
+            id="formMessage"
+            class="form-message"
+            role="status"
+            aria-live="polite"
+          ></p>
         </form>
       </div>
     </section>
@@ -130,19 +241,42 @@
     <div class="footer-inner">
       <div>
         <a href="index.html" class="logo">LocalBoost AI</a>
-        <p class="footer-description">Local businesses ke liye simple, practical AI marketing.</p>
+        <p class="footer-description">
+          Local businesses ke liye simple, practical AI marketing.
+        </p>
       </div>
+
       <div class="footer-links">
         <a href="how-it-works.html">How it works</a>
         <a href="features.html">Features</a>
         <a href="pricing.html">Pricing</a>
         <a href="resources.html">Resources</a>
-        <a href="generator.html">Start free</a>
+        <a href="generator.html">Free plan</a>
       </div>
     </div>
-    <p class="copyright">© 2026 LocalBoost AI. Demo website.</p>
+
+    <p class="copyright">© 2026 LocalBoost AI. Demo version.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    if (menuButton && navLinks) {
+      menuButton.addEventListener("click", function () {
+        const isOpen = navLinks.classList.toggle("open");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+      });
+    }
+
+    const form = document.getElementById("generatorForm");
+    const message = document.getElementById("formMessage");
+
+    if (form && message) {
+      form.addEventListener("submit", function () {
+        message.textContent = "Form submit ho raha hai…";
+      });
+    }
+  </script>
 </body>
 </html>

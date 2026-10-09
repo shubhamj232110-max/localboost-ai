@@ -1,31 +1,39 @@
+// Mobile navigation menu
 const menuButton = document.querySelector(".menu-button");
 const navLinks = document.querySelector(".nav-links");
 
 if (menuButton && navLinks) {
   menuButton.addEventListener("click", () => {
-    navLinks.classList.toggle("open");
+    const isOpen = navLinks.classList.toggle("open");
+    menuButton.setAttribute("aria-expanded", String(isOpen));
   });
 
-  document.querySelectorAll(".nav-links a").forEach((link) => {
+  navLinks.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       navLinks.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
     });
   });
 }
 
+// Home page slider
 const slides = document.querySelectorAll(".slide");
 const previousSlideButton = document.getElementById("previousSlide");
 const nextSlideButton = document.getElementById("nextSlide");
+
 let currentSlide = 0;
 
 function showSlide(index) {
   if (!slides.length) return;
 
-  slides.forEach((slide) => slide.classList.remove("active"));
+  slides.forEach((slide) => {
+    slide.classList.remove("active");
+  });
+
   slides[index].classList.add("active");
 }
 
-if (previousSlideButton && nextSlideButton && slides.length) {
+if (slides.length && previousSlideButton && nextSlideButton) {
   previousSlideButton.addEventListener("click", () => {
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     showSlide(currentSlide);
@@ -34,21 +42,5 @@ if (previousSlideButton && nextSlideButton && slides.length) {
   nextSlideButton.addEventListener("click", () => {
     currentSlide = (currentSlide + 1) % slides.length;
     showSlide(currentSlide);
-  });
-}
-
-const generatorForm = document.getElementById("generatorForm");
-const formMessage = document.getElementById("formMessage");
-
-if (generatorForm && formMessage) {
-  generatorForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const businessName = document.getElementById("businessName").value.trim();
-
-    formMessage.textContent =
-      `Thanks${businessName ? `, ${businessName}` : ""}! Aapka form receive ho gaya. Real AI plan generation hum next phase mein connect karenge.`;
-
-    generatorForm.reset();
   });
 }
