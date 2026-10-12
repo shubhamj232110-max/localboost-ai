@@ -5529,3 +5529,583 @@ img {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* Clean LocalBoost AI wordmark */
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  color: #172554;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.site-brand:hover {
+  color: #172554;
+  text-decoration: none;
+}
+
+.site-brand-mark {
+  display: grid;
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  place-items: center;
+  color: #fff;
+  background: #4338ca;
+  border-radius: 13px;
+  font-size: 17px;
+  font-weight: 850;
+  letter-spacing: -1.5px;
+  box-shadow: 0 5px 14px rgba(67, 56, 202, 0.2);
+}
+
+.site-brand-text {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.7px;
+}
+
+.site-brand-name {
+  color: #172554;
+}
+
+.site-brand-ai {
+  color: #0284c7;
+  font-size: 15px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+@media (max-width: 480px) {
+  .site-brand {
+    gap: 8px;
+  }
+
+  .site-brand-mark {
+    width: 38px;
+    height: 38px;
+    flex-basis: 38px;
+    border-radius: 11px;
+    font-size: 16px;
+  }
+
+  .site-brand-text {
+    font-size: 17px;
+  }
+
+  .site-brand-ai {
+    font-size: 14px;
+  }
+}
+/* Simple welcome marquee */
+.welcome-marquee {
+  overflow: hidden;
+  width: 100%;
+  padding: 11px 0;
+  color: #fff;
+  background: linear-gradient(90deg, #172554, #4338ca, #0369a1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.welcome-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  width: max-content;
+  animation: welcome-marquee-scroll 28s linear infinite;
+}
+
+.welcome-marquee-track span {
+  flex: 0 0 auto;
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.welcome-marquee-track .marquee-dot {
+  color: #bae6fd;
+  font-size: 0.8rem;
+}
+
+@keyframes welcome-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause movement while the visitor points to it */
+.welcome-marquee:hover .welcome-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .welcome-marquee {
+    overflow-x: auto;
+  }
+
+  .welcome-marquee-track {
+    animation: none;
+    width: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 12px;
+  }
+
+  .welcome-marquee-track span:nth-child(n + 7) {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-marquee {
+    padding: 9px 0;
+  }
+
+  .welcome-marquee-track {
+    gap: 16px;
+    animation-duration: 12s;
+  }
+
+  .welcome-marquee-track span {
+    font-size: 0.82rem;
+  }
+}
+.welcome-marquee-track {
+  animation: welcome-marquee-scroll 18s linear infinite;
+}
+/* Local business image showcase */
+.business-showcase {
+  width: min(1120px, calc(100% - 40px));
+  margin: 76px auto;
+}
+
+.business-showcase-heading {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+.business-showcase-heading h2 {
+  margin: 0;
+  color: #172554;
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+}
+
+.business-showcase-heading > p:last-child {
+  margin: 14px auto 0;
+  color: #61708a;
+  line-height: 1.7;
+}
+
+.business-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.business-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e3e9f5;
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(24, 43, 107, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.business-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 42px rgba(24, 43, 107, 0.14);
+}
+
+.business-card-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: #e9edf6;
+}
+
+.business-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 250ms ease;
+}
+
+.business-card:hover .business-card-image img {
+  transform: scale(1.04);
+}
+
+.business-card-tag {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  padding: 8px 11px;
+  color: #fff;
+  background: rgba(23, 37, 84, 0.88);
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.business-card-content {
+  padding: 22px;
+}
+
+.business-card-kicker {
+  margin: 0 0 9px;
+  color: #4f46e5;
+  font-size: 0.74rem;
+  font-weight: 750;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.business-card-content h3 {
+  margin: 0 0 10px;
+  color: #172554;
+  font-size: 1.18rem;
+  line-height: 1.35;
+}
+
+.business-card-content > p:not(.business-card-kicker) {
+  margin: 0;
+  color: #61708a;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+
+.business-card-content a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 17px;
+  color: #4338ca;
+  font-size: 0.9rem;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.business-card-content a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 850px) {
+  .business-showcase-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .business-showcase {
+    width: calc(100% - 32px);
+    margin: 56px auto;
+  }
+
+  .business-showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .business-card-image {
+    height: 220px;
+  }
+
+  .business-card-content {
+    padding: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .business-card,
+  .business-card-image img {
+    transition: none;
+  }
+
+  .business-card:hover,
+  .business-card:hover .business-card-image img {
+    transform: none;
+  }
+}
+/* Three LocalBoost benefit cards */
+.why-localboost {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.why-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  min-height: 140px;
+  padding: 23px;
+  background: #fff;
+  border: 1px solid #e4e9f4;
+  border-radius: 20px;
+  box-shadow: 0 10px 28px rgba(24, 43, 107, 0.07);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.why-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 34px rgba(24, 43, 107, 0.12);
+}
+
+.why-icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  place-items: center;
+  background: #eef2ff;
+  border-radius: 15px;
+  font-size: 1.35rem;
+}
+
+.why-card h2 {
+  margin: 2px 0 7px;
+  color: #172554;
+  font-size: 1.02rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.why-card p {
+  margin: 0;
+  color: #61708a;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 800px) {
+  .why-localboost {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    width: calc(100% - 32px);
+  }
+
+  .why-card {
+    min-height: auto;
+    padding: 19px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .why-card {
+    transition: none;
+  }
+
+  .why-card:hover {
+    transform: none;
+  }
+}
+/* Gym Growth Plan promotion banner */
+.gym-promo {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(230px, 0.8fr);
+  align-items: center;
+  gap: 28px;
+  width: min(1120px, calc(100% - 40px));
+  margin: 48px auto;
+  padding: clamp(24px, 4vw, 42px);
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(circle at 90% 10%, rgba(56, 189, 248, 0.26), transparent 34%),
+    linear-gradient(125deg, #111c43, #273b87 62%, #155e91);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 28px;
+  box-shadow: 0 20px 50px rgba(16, 33, 82, 0.2);
+}
+
+.gym-promo-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+}
+
+.gym-promo-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  padding: 8px 12px;
+  color: #d9f5ff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.gym-promo-label i {
+  color: #fde68a;
+}
+
+.gym-promo h2 {
+  max-width: 620px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.8rem, 3.8vw, 2.8rem);
+  font-weight: 850;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+}
+
+.gym-promo-copy > p {
+  max-width: 590px;
+  margin: 15px 0 22px;
+  color: #e1e9ff;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.gym-promo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 50px;
+  padding: 13px 20px;
+  color: #172554;
+  background: #fff;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px rgba(4, 12, 36, 0.2);
+  font-size: 0.94rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 180ms ease, background 180ms ease;
+}
+
+.gym-promo-button:hover {
+  color: #172554;
+  background: #e0f2fe;
+  transform: translateY(-2px);
+}
+
+.gym-promo-button span {
+  font-size: 1.2rem;
+}
+
+.gym-promo-visual {
+  position: relative;
+  justify-self: end;
+  width: min(100%, 300px);
+  height: 210px;
+}
+
+.gym-promo-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  border-radius: 22px;
+  box-shadow: 0 15px 35px rgba(5, 12, 34, 0.3);
+}
+
+.gym-promo-icon {
+  position: absolute;
+  top: -15px;
+  right: -14px;
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  color: #172554;
+  background: #fde68a;
+  border: 4px solid #253b82;
+  border-radius: 50%;
+  font-size: 1.35rem;
+}
+
+.gym-promo-pointer {
+  position: absolute;
+  right: -8px;
+  bottom: 39px;
+  display: inline-block;
+  font-size: 2.5rem;
+  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.25));
+  transform-origin: 70% 70%;
+  animation: gym-point-bounce 1.5s ease-in-out infinite;
+}
+
+.gym-promo-note {
+  position: absolute;
+  right: 22px;
+  bottom: 13px;
+  padding: 7px 11px;
+  color: #172554;
+  background: #fff;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+@keyframes gym-point-bounce {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(-8deg);
+  }
+
+  50% {
+    transform: translate(7px, -6px) rotate(4deg);
+  }
+}
+
+@media (max-width: 720px) {
+  .gym-promo {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    width: calc(100% - 32px);
+    margin: 40px auto;
+    padding: 25px 20px;
+    border-radius: 23px;
+  }
+
+  .gym-promo-visual {
+    justify-self: start;
+    width: min(100%, 330px);
+    height: 185px;
+  }
+
+  .gym-promo-button {
+    width: 100%;
+  }
+
+  .gym-promo-pointer {
+    right: -7px;
+    bottom: 32px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gym-promo-pointer {
+    animation: none;
+  }
+
+  .gym-promo-button {
+    transition: none;
+  }
+}

@@ -30,9 +30,14 @@
 <body>
   <!-- NAVIGATION -->
   <header class="navbar">
-    <a href="index.html" class="logo" aria-label="LocalBoost AI Home">
-      LocalBoost AI
-    </a>
+   <a href="index.html" class="site-brand" aria-label="LocalBoost AI Home">
+  <span class="site-brand-mark" aria-hidden="true">LB</span>
+
+  <span class="site-brand-text">
+    <span class="site-brand-name">LocalBoost</span>
+    <span class="site-brand-ai">AI</span>
+  </span>
+</a>
 
     <nav class="nav-links" aria-label="Main navigation">
       <a class="active" href="index.html" aria-current="page">Home</a>
@@ -52,6 +57,30 @@
       ☰
     </button>
   </header>
+  <div
+  class="welcome-marquee"
+  aria-label="Jai Shree Khatu Shyam, Radhe Radhe, Shubham Jaiswal, My Projects"
+>
+  <div class="welcome-marquee-track" aria-hidden="true">
+    <span>🙏 जय श्री खाटू श्याम 🙏</span>
+    <span class="marquee-dot">✦</span>
+    <span>🌸 Radhe Radhe 🌸</span>
+    <span class="marquee-dot">✦</span>
+    <span>👋 Shubham Jaiswal</span>
+    <span class="marquee-dot">✦</span>
+    <span>💻 My Projects</span>
+    <span class="marquee-dot">✦</span>
+
+    <span>🙏 जय श्री खाटू श्याम 🙏</span>
+    <span class="marquee-dot">✦</span>
+    <span>🌸 Radhe Radhe 🌸</span>
+    <span class="marquee-dot">✦</span>
+    <span>👋 Shubham Jaiswal</span>
+    <span class="marquee-dot">✦</span>
+    <span>💻 My Projects</span>
+    <span class="marquee-dot">✦</span>
+  </div>
+</div>
 
   <main>
     <!-- HERO -->
@@ -158,22 +187,32 @@
     </section>
 
     <!-- TRUST STRIP -->
-    <section class="trust-strip reveal" aria-label="Who LocalBoost is for">
-      <div>
-        <strong>Made for local businesses</strong>
-        <span>Salon, café, gym, boutique, coaching and service businesses</span>
-      </div>
+   <!-- Why LocalBoost -->
+<section class="why-localboost" aria-label="Why choose LocalBoost AI">
+  <article class="why-card">
+    <span class="why-icon" aria-hidden="true">📍</span>
+    <div>
+      <h2>Made for local businesses</h2>
+      <p>Salon, café, gym, boutique, coaching and service businesses.</p>
+    </div>
+  </article>
 
-      <div>
-        <strong>Simple language</strong>
-        <span>Clear content in Hinglish, Hindi or English</span>
-      </div>
+  <article class="why-card">
+    <span class="why-icon" aria-hidden="true">💬</span>
+    <div>
+      <h2>Simple language</h2>
+      <p>Clear content in Hinglish, Hindi or English.</p>
+    </div>
+  </article>
 
-      <div>
-        <strong>Practical output</strong>
-        <span>Ideas designed to be reviewed, edited and posted</span>
-      </div>
-    </section>
+  <article class="why-card">
+    <span class="why-icon" aria-hidden="true">✍️</span>
+    <div>
+      <h2>Practical output</h2>
+      <p>Ideas designed to be reviewed, edited and posted.</p>
+    </div>
+  </article>
+</section>
 
     <!-- THREE STEP PROCESS -->
     <section class="process-section">
@@ -214,50 +253,99 @@
       </div>
     </section>
 
-    <!-- DELIVERABLES SLIDER -->
-    <section class="home-slider reveal">
-      <p class="eyebrow slider-eyebrow">What a plan may include</p>
+    <!-- Local business examples -->
+<section class="business-showcase" aria-labelledby="business-showcase-title">
+  <div class="business-showcase-heading">
+    <p class="eyebrow">For local businesses</p>
+    <h2 id="business-showcase-title">
+      Practical ideas for the business you run
+    </h2>
+    <p>
+      Explore example marketing ideas for gyms, beauty parlours and cafés.
+      These are illustrative examples, not customer results.
+    </p>
+  </div>
 
-      <h2>Start with your business. Explore practical ideas.</h2>
-
-      <p>
-      Get a feel for the kinds of content and promotion concepts you could
-      adapt to your business. The salon example above is illustrative only.
-      </p>
-
-      <div class="slider-content">
-        <div class="slide-wrapper">
-          <article class="slide active">
-            <span class="slide-label">01 / 03</span>
-            <h3>Content calendar ideas</h3>
-            <p>
-              Suggested content topics, post formats, caption angles and local calls to action.
-            </p>
-          </article>
-
-          <article class="slide">
-            <span class="slide-label">02 / 03</span>
-            <h3>Phone-friendly Reel scripts</h3>
-            <p>
-              Hook and scene ideas your team can adapt and shoot with a phone.
-            </p>
-          </article>
-
-          <article class="slide">
-            <span class="slide-label">03 / 03</span>
-            <h3>Offers and WhatsApp drafts</h3>
-            <p>
-              Promotion ideas and respectful message drafts for customers who agreed to receive updates.
-            </p>
-          </article>
-        </div>
-
-        <div class="slider-controls">
-          <button id="previousSlide" type="button" aria-label="Previous slide">←</button>
-          <button id="nextSlide" type="button" aria-label="Next slide">→</button>
-        </div>
+  <div class="business-showcase-grid">
+    <!-- Gym card -->
+    <article class="business-card">
+      <div class="business-card-image">
+        <img
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85"
+          alt="Gym interior with fitness equipment"
+          loading="lazy"
+          width="900"
+          height="650"
+        >
+        <span class="business-card-tag">GYM &amp; FITNESS</span>
       </div>
-    </section>
+
+      <div class="business-card-content">
+        <p class="business-card-kicker">Training • Community • Membership</p>
+        <h3>Help more people discover your gym</h3>
+        <p>
+          Share beginner-friendly workout tips, trainer introductions and
+          member stories—with permission.
+        </p>
+        <a href="gym-growth-plan.html">
+          Explore Gym Growth Plan <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- Beauty parlour card -->
+    <article class="business-card">
+      <div class="business-card-image">
+        <img
+          src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85"
+          alt="Bright, modern beauty salon interior"
+          loading="lazy"
+          width="900"
+          height="650"
+        >
+        <span class="business-card-tag">BEAUTY PARLOUR</span>
+      </div>
+
+      <div class="business-card-content">
+        <p class="business-card-kicker">Services • Tips • Bookings</p>
+        <h3>Show the care behind your services</h3>
+        <p>
+          Create service explainers, hair-care tips and appointment reminders.
+          Confirm prices and offers before posting.
+        </p>
+        <a href="generator.html?category=salon">
+          Request a marketing plan <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- Café card -->
+    <article class="business-card">
+      <div class="business-card-image">
+        <img
+          src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85"
+          alt="Warm and welcoming café interior"
+          loading="lazy"
+          width="900"
+          height="650"
+        >
+        <span class="business-card-tag">CAFÉ &amp; RESTAURANT</span>
+      </div>
+
+      <div class="business-card-content">
+        <p class="business-card-kicker">Menu • Moments • Local offers</p>
+        <h3>Make your café part of the neighbourhood</h3>
+        <p>
+          Share a menu highlight, behind-the-scenes moments and clear local
+          updates your customers can use.
+        </p>
+        <a href="generator.html?category=restaurant">
+          Request a marketing plan <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
+  </div>
+</section>
 
     <!-- FEATURES -->
     <section class="section">
@@ -302,39 +390,50 @@
       </div>
     </section>
 
-    <!-- GYM PAGE BANNER -->
-    <section class="gym-link-banner reveal">
-      <div>
-        <p class="eyebrow">For gym owners</p>
-        <h2>Need local lead ideas, gym Reels and member-retention actions?</h2>
-        <p>
-          Explore the Gym Growth Plan preview with Reel hooks, local visibility
-          actions, membership-offer concepts and member-engagement ideas.
-        </p>
-      </div>
+   <!-- Gym Growth Plan CTA -->
+<section class="gym-promo" aria-labelledby="gym-promo-title">
+  <div class="gym-promo-copy">
+    <span class="gym-promo-label">
+      <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+      FOR GYM OWNERS
+    </span>
 
-      <a href="gym-growth-plan.html" class="button button-secondary">
-        View Gym Growth Plan →
-      </a>
-    </section>
+    <h2 id="gym-promo-title">
+      Ready to grow your gym’s local presence?
+    </h2>
 
-    <!-- FINAL CTA -->
-    <section class="light-section section">
-      <div class="final-cta-box reveal">
-        <p class="eyebrow">Get started</p>
-        <h2>Make your local marketing more consistent.</h2>
-        <p>Submit your business details to request a custom marketing plan.</p>
+    <p>
+      Explore practical gym Reel hooks, local marketing ideas,
+      membership-offer concepts and member-engagement actions.
+    </p>
 
-        <a href="generator.html" class="button button-primary">
-          Request my custom plan →
-        </a>
+    <a class="gym-promo-button" href="gym-growth-plan.html">
+      Explore the Gym Growth Plan
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
 
-        <small>
-          Submitting a request does not guarantee business results. Outcomes
-          depend on your business, local market, offer and execution.
-        </small>
-      </div>
-    </section>
+  <div class="gym-promo-visual">
+    <img
+      class="gym-promo-photo"
+      src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80"
+      alt="Fitness equipment inside a gym"
+      loading="lazy"
+      width="700"
+      height="460"
+    >
+
+    <span class="gym-promo-icon" aria-hidden="true">
+      <i class="bi bi-barbell"></i>
+    </span>
+
+    <span class="gym-promo-pointer" aria-hidden="true">👉</span>
+
+    <span class="gym-promo-note">
+      See the gym plan
+    </span>
+  </div>
+</section>
 
     <!-- FAQ SECTION -->
     <section class="section faq-section" id="faq">
