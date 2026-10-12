@@ -1,120 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Simple LocalBoost AI pricing for Indian local businesses.">
+
+  <meta
+    name="description"
+    content="Compare LocalBoost AI plan options for local businesses. Request details about the free, Starter and Growth plans."
+  >
+
   <title>Pricing | LocalBoost AI</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body class="pricing-page">
+
+  <!-- NAVBAR -->
   <header class="navbar">
-    <a href="index.html" class="logo">LocalBoost AI</a>
+    <a href="index.html" class="logo pricing-logo">LocalBoost AI</a>
 
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="how-it-works.html">How it works</a>
       <a href="features.html">Features</a>
       <a class="active" href="pricing.html">Pricing</a>
       <a href="resources.html">Resources</a>
-      <a href="generator.html" class="nav-cta">Free plan banayein</a>
+      <a href="generator.html" class="nav-cta">Get my plan</a>
     </nav>
 
-    <button class="menu-button" aria-label="Open navigation menu">☰</button>
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="page-hero-content">
-        <p class="eyebrow">Simple pricing</p>
-        <h1>Free se shuru karein. Jab value dikhe tab upgrade karein.</h1>
-        <p>Early pricing ko clearly show karein—koi hidden charges ya fake promises nahi.</p>
+
+    <!-- HERO -->
+    <section class="pricing-hero pricing-gradient">
+      <div class="pricing-sparkle sparkle-one">✦</div>
+      <div class="pricing-sparkle sparkle-two">✧</div>
+      <div class="pricing-sparkle sparkle-three">✦</div>
+
+      <div class="pricing-hero-content fade-scale">
+        <p class="eyebrow">Straightforward plan options</p>
+
+        <h1>Start free. Choose a paid plan when you’re ready.</h1>
+
+        <p>
+          Compare the current plan ideas and send a request for the option that
+          fits your business. No online payment is being collected on this page.
+        </p>
+
+        <a href="#plans" class="button button-primary">
+          Compare plans ↓
+        </a>
+
+        <span class="pricing-note">
+          Current plans are in testing. Confirm availability before buying.
+        </span>
+      </div>
+
+      <div class="pricing-growth-mark" aria-hidden="true">
+        <span class="growth-line"></span>
+        <span class="growth-arrow">↗</span>
       </div>
     </section>
 
-    <section class="section">
-      <div class="pricing-grid">
-        <article class="pricing-card">
-          <p class="plan-name">Free</p>
-          <h3>₹0</h3>
-          <p>Product ko samajhne aur try karne ke liye.</p>
+    <!-- PRICING CARDS -->
+    <section class="section pricing-section" id="plans">
+      <div class="section-heading fade-scale">
+        <p class="eyebrow">Choose a starting point</p>
+        <h2>Plans for different stages of growth</h2>
+        <p>
+          These are proposed plan options. Submit a request to confirm what is
+          currently available and what will be delivered.
+        </p>
+      </div>
 
-          <ul>
-            <li>✓ 7-day starter content plan</li>
-            <li>✓ 1 Reel script</li>
-            <li>✓ 1 offer idea</li>
-            <li>✓ Basic content preview</li>
+      <div class="pricing-grid pricing-card-grid">
+
+        <!-- FREE -->
+        <article class="pricing-card pricing-animated-card">
+          <div class="pricing-card-top">
+            <span class="plan-name">Free</span>
+            <span class="plan-icon" aria-hidden="true">✦</span>
+          </div>
+
+          <h3 class="plan-price">₹0</h3>
+          <p class="plan-description">Try a short starter-plan request.</p>
+
+          <ul class="plan-features">
+            <li>7-day starter-plan request</li>
+            <li>Content-topic ideas</li>
+            <li>One Reel idea</li>
+            <li>One promotion idea</li>
           </ul>
 
-          <a href="generator.html" class="button button-secondary full-button">Free plan banayein</a>
+          <a
+            href="generator.html?plan=free"
+            class="button button-secondary full-button"
+          >
+            Request free plan
+          </a>
+
+          <p class="plan-footnote">No payment required to send a request.</p>
         </article>
 
-        <article class="pricing-card popular">
-          <span class="popular-label">Best for starting</span>
-          <p class="plan-name">Starter</p>
-          <h3>₹499 <small>/month</small></h3>
-          <p>Consistent marketing chahne wale local business ke liye.</p>
+        <!-- STARTER -->
+        <article class="pricing-card popular pricing-animated-card">
+          <span class="popular-label">Popular option</span>
 
-          <ul>
-            <li>✓ 30-day content calendar</li>
-            <li>✓ Ready-to-edit captions</li>
-            <li>✓ 4 Reel scripts per month</li>
-            <li>✓ 2 WhatsApp campaign drafts</li>
-            <li>✓ Basic business profile</li>
+          <div class="pricing-card-top">
+            <span class="plan-name">Starter</span>
+            <span class="plan-icon" aria-hidden="true">↗</span>
+          </div>
+
+          <h3 class="plan-price">₹499<span>/month</span></h3>
+          <p class="plan-description">For a business building a regular marketing routine.</p>
+
+          <ul class="plan-features">
+            <li>Proposed 30-day content calendar</li>
+            <li>Caption and CTA drafts</li>
+            <li>4 Reel scripts per month</li>
+            <li>2 WhatsApp campaign drafts</li>
           </ul>
 
-          <a href="generator.html" class="button button-primary full-button">Starter ke liye apply karein</a>
+          <a
+            href="generator.html?plan=starter"
+            class="button button-primary full-button"
+          >
+            Ask about Starter
+          </a>
+
+          <p class="plan-footnote">Request details first; payment is not taken here.</p>
         </article>
 
-        <article class="pricing-card">
-          <p class="plan-name">Growth</p>
-          <h3>₹1,499 <small>/month</small></h3>
-          <p>Active business owners ke liye jinko more content chahiye.</p>
+        <!-- GROWTH -->
+        <article class="pricing-card pricing-animated-card">
+          <div class="pricing-card-top">
+            <span class="plan-name">Growth</span>
+            <span class="plan-icon" aria-hidden="true">✧</span>
+          </div>
 
-          <ul>
-            <li>✓ Higher fair-use generation limit</li>
-            <li>✓ Full brand kit</li>
-            <li>✓ More Reel and offer ideas</li>
-            <li>✓ Image credits later</li>
-            <li>✓ Priority support</li>
+          <h3 class="plan-price">₹1,499<span>/month</span></h3>
+          <p class="plan-description">A proposed option for businesses needing more support.</p>
+
+          <ul class="plan-features">
+            <li>Higher content-generation allowance</li>
+            <li>Brand-kit setup concept</li>
+            <li>More Reel and offer ideas</li>
+            <li>Image credits or priority support, if available</li>
           </ul>
 
-          <a href="generator.html" class="button button-secondary full-button">Growth ke liye apply karein</a>
+          <a
+            href="generator.html?plan=growth"
+            class="button button-secondary full-button"
+          >
+            Ask about Growth
+          </a>
+
+          <p class="plan-footnote">Confirm features and availability before purchase.</p>
         </article>
       </div>
     </section>
 
-    <section class="orange-section section">
-      <div class="section-heading">
-        <p class="eyebrow">Founder offer</p>
-        <h2>Pehle 10 businesses ke liye custom 30-day plan.</h2>
-        <p>Start mein aap ₹499 one-time custom plan offer kar sakte ho, manually quality check karke deliver kar sakte ho.</p>
+    <!-- HOW REQUESTS WORK -->
+    <section class="pricing-how-section">
+      <div class="section-heading fade-scale">
+        <p class="eyebrow">What happens next?</p>
+        <h2>A plan button sends a request—not a payment.</h2>
+        <p>
+          This early version collects your request so LocalBoost AI can confirm
+          the plan details with you.
+        </p>
       </div>
 
-      <div style="text-align:center;">
-        <a href="generator.html" class="button button-primary">Custom plan ke liye details dein</a>
+      <div class="pricing-request-steps">
+        <article class="request-step fade-scale">
+          <span>01</span>
+          <h3>Select a plan</h3>
+          <p>Choose the plan you want to ask about.</p>
+        </article>
+
+        <article class="request-step fade-scale">
+          <span>02</span>
+          <h3>Share business details</h3>
+          <p>Complete the request form with your business and contact details.</p>
+        </article>
+
+        <article class="request-step fade-scale">
+          <span>03</span>
+          <h3>Review the response</h3>
+          <p>We will confirm scope, availability, price and delivery details.</p>
+        </article>
       </div>
     </section>
+
+    <!-- FAQ -->
+    <section class="section pricing-faq-section">
+      <div class="section-heading fade-scale">
+        <p class="eyebrow">Pricing questions</p>
+        <h2>Before you request a plan</h2>
+      </div>
+
+      <div class="pricing-faq-list">
+        <details class="pricing-faq-item">
+          <summary>Does clicking a paid plan charge me?</summary>
+          <p>
+            No. The button opens the request form. It does not take payment.
+            Plan availability and details must be confirmed first.
+          </p>
+        </details>
+
+        <details class="pricing-faq-item">
+          <summary>Is AI plan generation automatic?</summary>
+          <p>
+            The current website version collects a request. Automatic AI
+            generation is not yet connected.
+          </p>
+        </details>
+
+        <details class="pricing-faq-item">
+          <summary>Can I request a gym-specific plan?</summary>
+          <p>
+            Yes. Open the Gym Growth Plan page and use its plan-request button.
+          </p>
+        </details>
+
+        <details class="pricing-faq-item">
+          <summary>Are sales or customer results guaranteed?</summary>
+          <p>
+            No. Marketing results depend on your offer, location, service,
+            follow-up and execution.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section pricing-bottom-section">
+      <div class="pricing-bottom-card fade-scale">
+        <p class="eyebrow">Not sure which plan fits?</p>
+        <h2>Send a free request and tell us your goal.</h2>
+        <p>
+          We can review your business type, location and marketing goal before
+          confirming a suitable option.
+        </p>
+
+        <a
+          href="generator.html?plan=free"
+          class="button button-primary"
+        >
+          Request a free starter plan →
+        </a>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <a href="index.html" class="logo">LocalBoost AI</a>
-        <p class="footer-description">Local businesses ke liye simple, practical AI marketing.</p>
-      </div>
-      <div class="footer-links">
-        <a href="how-it-works.html">How it works</a>
-        <a href="features.html">Features</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="resources.html">Resources</a>
-        <a href="generator.html">Start free</a>
-      </div>
-    </div>
-    <p class="copyright">© 2026 LocalBoost AI. Demo website.</p>
-  </footer>
+ <!-- Footer aur chatbot shared files se load honge -->
+<div id="sharedFooter"></div>
+<div id="sharedChatbot"></div>
 
-  <script src="script.js"></script>
+<script src="shared-layout.js"></script>
+</body>
+</html>
+
+
 </body>
 </html>

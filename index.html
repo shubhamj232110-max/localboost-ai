@@ -3,103 +3,247 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="LocalBoost AI helps Indian local businesses create a 30-day marketing plan in 2 minutes.">
-  <title>LocalBoost AI | Local Marketing Made Simple</title>
+
+  <meta
+    name="description"
+    content="LocalBoost AI helps local businesses request practical marketing ideas, captions, Reel scripts and promotion ideas."
+  >
+
+  <title>LocalBoost AI | Practical Marketing Plans for Local Businesses</title>
+
+  <!-- Bootstrap grid and Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+  >
+
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-
+  <!-- NAVIGATION -->
   <header class="navbar">
-    <a href="index.html" class="logo">LocalBoost AI</a>
+    <a href="index.html" class="logo" aria-label="LocalBoost AI Home">
+      LocalBoost AI
+    </a>
 
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Main navigation">
       <a class="active" href="index.html">Home</a>
       <a href="how-it-works.html">How it works</a>
       <a href="features.html">Features</a>
       <a href="pricing.html">Pricing</a>
-      <a href="resources.html">Resources</a>
-      <a href="generator.html" class="nav-cta">Free plan banayein</a>
+      <a href="gym-growth-plan.html">Gym Plan</a>
+      <a href="generator.html" class="nav-cta">Get my plan</a>
     </nav>
 
-    <button class="menu-button" aria-label="Open navigation menu">☰</button>
+    <button
+      class="menu-button"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">Local businesses ke liye AI marketing assistant</p>
+    <!-- HERO -->
+    <section class="hero hero-animated-bg">
+      <div class="hero-content reveal reveal-left">
+        <p class="eyebrow">Practical marketing support for local businesses</p>
 
-        <h1>30 din ka local marketing plan. <span>Sirf 2 minute mein.</span></h1>
+        <h1>
+          A custom 30-day marketing plan
+          <span id="typewriterText">built around your business.</span>
+        </h1>
 
         <p class="hero-text">
-          Ready-to-post captions, Reel scripts, WhatsApp campaign ideas aur promotional offers—
-          sab aapke business, city aur customers ke hisaab se.
+          Tell us about your business, city, target customers and current offer.
+          We prepare practical content ideas, captions, phone-friendly Reel scripts,
+          local offer concepts and WhatsApp campaign drafts.
         </p>
 
         <div class="hero-buttons">
-          <a href="generator.html" class="button button-primary">Free plan banayein</a>
-          <a href="features.html" class="button button-secondary">Demo dekhein</a>
+          <a href="generator.html" class="button button-primary">
+            Request my custom plan →
+          </a>
+
+          <a href="#sample-preview" class="button button-secondary">
+            See a sample plan
+          </a>
         </div>
 
-        <p class="trust-text">No credit card required • Hindi, English aur Hinglish support</p>
+        <p class="trust-text">
+          Clear request process • Hindi, English and Hinglish support
+        </p>
       </div>
 
-      <div class="dashboard">
+      <!-- SAMPLE PLAN PREVIEW -->
+      <div
+        class="dashboard sample-dashboard reveal reveal-right"
+        id="sample-preview"
+        aria-label="Example marketing plan preview"
+      >
         <div class="dashboard-top">
           <div>
-            <p class="small-label">Good morning, Priya 👋</p>
+            <p class="small-label">Sample output preview</p>
             <h2>Glow &amp; Go Salon</h2>
-            <p class="muted">Vijay Nagar, Indore</p>
+            <p class="muted">Vijay Nagar, Indore · Example only</p>
           </div>
-          <span class="status-badge">Growth Plan</span>
+
+          <span class="sample-badge">Sample</span>
         </div>
 
-        <div class="plan-card">
-          <p class="small-label">October growth plan</p>
-          <h3>Goal: 30 WhatsApp enquiries</h3>
-          <div class="progress"><span></span></div>
-          <p class="muted">Your local marketing plan is ready.</p>
+        <div class="plan-card sample-plan-card">
+          <p class="small-label">Day 1 · Instagram Reel</p>
+          <h3>Hair-care Reel script</h3>
+
+          <p class="muted">
+            <strong>Hook:</strong>
+            “Does your hair colour lose its glow too quickly?”
+          </p>
+
+          <p class="muted">
+            <strong>Content idea:</strong>
+            Show one simple hair-care tip for local weather, followed by a clear
+            booking call-to-action.
+          </p>
         </div>
 
-        <div class="post-card">
+        <div class="post-card sample-post-card">
           <div class="post-header">
-            <span class="small-label">Today's post</span>
-            <span class="content-type">Instagram Reel</span>
+            <span class="small-label">WhatsApp campaign draft</span>
+            <span class="content-type">Opt-in only</span>
           </div>
-          <h3>Party-ready look in 30 minutes</h3>
-          <p class="muted">Hook: “Last-minute party look chahiye?”</p>
-          <button class="small-button" type="button">View script</button>
+
+          <p class="muted">
+            “Hi [Name], weekday facial appointments are available this week.
+            Reply ‘GLOW’ if you would like booking details.”
+          </p>
         </div>
 
         <div class="stats">
-          <div class="stat"><strong>30</strong><span>Posts ready</span></div>
-          <div class="stat"><strong>8</strong><span>Reel ideas</span></div>
-          <div class="stat"><strong>4</strong><span>Campaigns</span></div>
-          <div class="stat"><strong>6</strong><span>Offer ideas</span></div>
+          <div class="stat">
+            <strong>30</strong>
+            <span>Content ideas</span>
+          </div>
+
+          <div class="stat">
+            <strong>8</strong>
+            <span>Reel scripts</span>
+          </div>
+
+          <div class="stat">
+            <strong>4</strong>
+            <span>WhatsApp drafts</span>
+          </div>
+
+          <div class="stat">
+            <strong>1</strong>
+            <span>Custom plan</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="home-slider">
-      <p class="eyebrow" style="color:#b8c7ff;">What LocalBoost creates</p>
-      <h2>Ek business detail. Multiple marketing actions.</h2>
-      <p>Har output local business owner ke liye simple aur ready-to-use hona chahiye.</p>
+    <!-- TRUST STRIP -->
+    <section class="trust-strip reveal">
+      <div>
+        <strong>Made for local businesses</strong>
+        <span>Salon, café, gym, boutique, coaching and service businesses</span>
+      </div>
+
+      <div>
+        <strong>Simple language</strong>
+        <span>Clear content in Hinglish, Hindi or English</span>
+      </div>
+
+      <div>
+        <strong>Practical output</strong>
+        <span>Ideas designed to be reviewed, edited and posted</span>
+      </div>
+    </section>
+
+    <!-- THREE STEP PROCESS -->
+    <section class="process-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Clear process</p>
+        <h2>Your plan in 3 simple steps</h2>
+        <p>You know what happens after you send your plan request.</p>
+      </div>
+
+      <div class="process-grid stagger-parent">
+        <article class="process-card reveal">
+          <span class="process-number">01</span>
+          <div class="icon">✦</div>
+          <h3>Share business details</h3>
+          <p>
+            Add your business category, city, services, offer and marketing goal.
+          </p>
+        </article>
+
+        <article class="process-card reveal">
+          <span class="process-number">02</span>
+          <div class="icon">⌁</div>
+          <h3>Request a tailored plan</h3>
+          <p>
+            Submit your details so your request can be reviewed for a useful,
+            local marketing direction.
+          </p>
+        </article>
+
+        <article class="process-card reveal">
+          <span class="process-number">03</span>
+          <div class="icon">✓</div>
+          <h3>Review and use it</h3>
+          <p>
+            Check every offer and claim, then adapt any ideas for your real business.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- DELIVERABLES SLIDER -->
+    <section class="home-slider reveal">
+      <p class="eyebrow slider-eyebrow">What a plan may include</p>
+
+      <h2>One business brief. A clear marketing direction.</h2>
+
+      <p>
+        Simple, readable content guidance for busy local-business owners.
+        The sample above is illustrative; requests are reviewed and plans are
+        not generated automatically by this demo.
+      </p>
 
       <div class="slider-content">
-        <div>
+        <div class="slide-wrapper">
           <article class="slide active">
-            <h3>30-day content calendar</h3>
-            <p>Har din ke liye post topic, format, caption aur local CTA ka plan.</p>
+            <span class="slide-label">01 / 03</span>
+            <h3>Content calendar ideas</h3>
+            <p>
+              Suggested content topics, post formats, caption angles and local calls to action.
+            </p>
           </article>
 
           <article class="slide">
-            <h3>Phone-friendly Reel script</h3>
-            <p>Hook, scene ideas, voiceover aur CTA—simple phone shooting ke liye.</p>
+            <span class="slide-label">02 / 03</span>
+            <h3>Phone-friendly Reel scripts</h3>
+            <p>
+              Hook and scene ideas your team can adapt and shoot with a phone.
+            </p>
           </article>
 
           <article class="slide">
-            <h3>WhatsApp campaign draft</h3>
-            <p>Opt-in customers ke liye respectful reactivation ya offer message draft.</p>
+            <span class="slide-label">03 / 03</span>
+            <h3>Offers and WhatsApp drafts</h3>
+            <p>
+              Promotion ideas and respectful message drafts for customers who agreed to receive updates.
+            </p>
           </article>
         </div>
 
@@ -110,72 +254,160 @@
       </div>
     </section>
 
+    <!-- FEATURES -->
     <section class="section">
-      <div class="section-heading">
+      <div class="section-heading reveal">
         <p class="eyebrow">Built for local growth</p>
-        <h2>Aapko marketing mein exactly kya milega?</h2>
-        <p>Ideas nahi—post karne layak clear action plan.</p>
+        <h2>What your plan can include</h2>
+        <p>Clear, editable marketing ideas—not confusing theory or false promises.</p>
       </div>
 
-      <div class="four-column">
-        <article class="feature-card">
+      <div class="four-column stagger-parent">
+        <article class="feature-card reveal">
           <div class="icon">▦</div>
-          <h3>Content calendar</h3>
-          <p>Har din kya post karna hai—offers, tips, trust aur engagement ka balanced plan.</p>
+          <h3>Content calendar ideas</h3>
+          <p>
+            A mix of offers, tips, trust-building posts, community content and engagement ideas.
+          </p>
         </article>
 
-        <article class="feature-card">
+        <article class="feature-card reveal">
           <div class="icon">Aa</div>
-          <h3>Captions</h3>
-          <p>Aapki category aur city ke hisaab se captions aur practical CTAs.</p>
+          <h3>Captions and CTAs</h3>
+          <p>
+            Caption ideas with local angles and calls to action based on your business goal.
+          </p>
         </article>
 
-        <article class="feature-card">
+        <article class="feature-card reveal">
           <div class="icon">▶</div>
           <h3>Reel scripts</h3>
-          <p>Phone se shoot karne layak hooks, scenes aur voiceover instructions.</p>
+          <p>
+            Scene-by-scene Reel ideas made for real staff, real services and a simple phone camera.
+          </p>
         </article>
 
-        <article class="feature-card">
-          <div class="icon">◌</div>
+        <article class="feature-card reveal">
+          <div class="icon">%</div>
           <h3>Offer ideas</h3>
-          <p>Bookings, walk-ins aur repeat customers ke liye promotion concepts.</p>
+          <p>
+            Ideas for trials, referrals, slow days, repeat customers and local occasions.
+          </p>
         </article>
       </div>
     </section>
 
-    <section class="light-section section">
-      <div class="section-heading">
-        <p class="eyebrow">Start simple</p>
-        <h2>Apne business ke liye plan banane ke liye ready?</h2>
-        <p>Free starter plan se begin karo aur dekho LocalBoost aapke liye kya create kar sakta hai.</p>
+    <!-- GYM PAGE BANNER -->
+    <section class="gym-link-banner reveal">
+      <div>
+        <p class="eyebrow">For gym owners</p>
+        <h2>Need local lead ideas, gym Reels and member-retention actions?</h2>
+        <p>
+          Explore the Gym Growth Plan preview with Reel hooks, local visibility
+          actions, membership-offer concepts and member-engagement ideas.
+        </p>
       </div>
 
-      <div style="text-align:center;">
-        <a href="generator.html" class="button button-primary">Mera free plan banayein →</a>
+      <a href="gym-growth-plan.html" class="button button-secondary">
+        View Gym Growth Plan →
+      </a>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="light-section section">
+      <div class="final-cta-box reveal">
+        <p class="eyebrow">Get started</p>
+        <h2>Make your local marketing more consistent.</h2>
+        <p>Submit your business details to request a custom marketing plan.</p>
+
+        <a href="generator.html" class="button button-primary">
+          Request my custom plan →
+        </a>
+
+        <small>
+          Submitting a request does not guarantee business results. Outcomes
+          depend on your business, local market, offer and execution.
+        </small>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section faq-section" id="faq">
+      <div class="section-heading">
+        <p class="eyebrow">FAQs</p>
+        <h2>Questions about LocalBoost AI</h2>
+        <p>Answers to common questions about the service and plan request.</p>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Is the content completely ready to post?</summary>
+          <div class="faq-answer">
+            <p>
+              You may receive captions, Reel scripts and content ideas that
+              you can adapt. Before posting, check your business name, offer,
+              prices, dates and contact details.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Can I get Hindi or Hinglish captions?</summary>
+          <div class="faq-answer">
+            <p>
+              Yes. Select Hindi, Hinglish or English in the plan request form.
+              The requested language and your business details help guide the content.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How does payment work?</summary>
+          <div class="faq-answer">
+            <p>
+              This website does not currently collect online payments.
+              Submitting a plan request does not charge you. Any paid offer,
+              amount and payment method will be confirmed clearly beforehand.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>Will I receive an AI plan immediately after submitting?</summary>
+          <div class="faq-answer">
+            <p>
+              No. This demo does not automatically generate a plan. Submitted
+              requests are reviewed, and the confirmation page confirms receipt.
+            </p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>How do I request a plan?</summary>
+          <div class="faq-answer">
+            <p>
+              Click “Get my plan”, complete the form steps, and submit your
+              business details, marketing goal and contact email.
+            </p>
+          </div>
+        </details>
+      </div>
+
+      <div class="faq-cta">
+        <a href="generator.html" class="button button-primary">Request a plan</a>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <a href="index.html" class="logo">LocalBoost AI</a>
-        <p class="footer-description">Local businesses ke liye simple, practical AI marketing.</p>
-      </div>
+ 
 
-      <div class="footer-links">
-        <a href="how-it-works.html">How it works</a>
-        <a href="features.html">Features</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="resources.html">Resources</a>
-        <a href="generator.html">Start free</a>
-      </div>
-    </div>
+ 
+<!-- Footer aur chatbot shared files se load honge -->
+<div id="sharedFooter"></div>
+<div id="sharedChatbot"></div>
 
-    <p class="copyright">© 2026 LocalBoost AI. Demo website.</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="shared-layout.js"></script>
+</body>
+</html>  
 </body>
 </html>

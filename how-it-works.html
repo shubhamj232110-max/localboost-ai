@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="See how LocalBoost AI creates a local marketing plan in 2 minutes.">
-  <title>How it works | LocalBoost AI</title>
+
+  <meta
+    name="description"
+    content="See how LocalBoost AI turns your local business details into a practical marketing-plan request."
+  >
+
+  <title>How It Works | LocalBoost AI</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
+  <!-- NAVBAR -->
   <header class="navbar">
     <a href="index.html" class="logo">LocalBoost AI</a>
 
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a class="active" href="how-it-works.html">How it works</a>
       <a href="features.html">Features</a>
@@ -21,92 +31,255 @@
       <a href="generator.html" class="nav-cta">Free plan banayein</a>
     </nav>
 
-    <button class="menu-button" aria-label="Open navigation menu">☰</button>
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="page-hero-content">
+    <!-- PAGE HERO -->
+    <section class="page-hero how-hero how-gradient">
+      <div class="page-hero-content reveal from-left">
         <p class="eyebrow">Simple process</p>
-        <h1>Marketing plan banana ab confusing nahi hoga.</h1>
-        <p>LocalBoost AI aapke business details ko practical marketing actions mein convert karta hai.</p>
+
+        <h1>
+          A clear path from business details to a practical marketing plan.
+        </h1>
+
+        <p>
+          Share your business information, request a plan and review the ideas
+          before using them in your marketing.
+        </p>
+
+        <a href="generator.html" class="button button-primary how-hero-button">
+          Request your plan →
+        </a>
+      </div>
+
+      <div class="how-hero-card reveal from-right">
+        <span class="how-hero-card-label">YOUR PLAN FLOW</span>
+
+        <div class="how-flow-item">
+          <span class="how-flow-number">01</span>
+          <div>
+            <strong>Business details</strong>
+            <p>Category, city, audience and goal</p>
+          </div>
+        </div>
+
+        <div class="how-flow-connector"></div>
+
+        <div class="how-flow-item">
+          <span class="how-flow-number">02</span>
+          <div>
+            <strong>Plan preparation</strong>
+            <p>Content topics, captions and ideas</p>
+          </div>
+        </div>
+
+        <div class="how-flow-connector"></div>
+
+        <div class="how-flow-item">
+          <span class="how-flow-number">03</span>
+          <div>
+            <strong>Review and use</strong>
+            <p>Check details before publishing</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-heading">
-        <p class="eyebrow">3 simple steps</p>
-        <h2>Kaise kaam karta hai?</h2>
-        <p>Start karne ke liye technical ya marketing experience ki zarurat nahi hai.</p>
+    <!-- THREE STEPS -->
+    <section class="section how-steps-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Three simple steps</p>
+        <h2>How your plan request works</h2>
+        <p>
+          You do not need marketing or technical experience to request a plan.
+        </p>
       </div>
 
-      <div class="three-column">
-        <article class="info-card">
+      <div class="three-column stagger-parent">
+        <article class="info-card how-step-card reveal">
+          <span class="how-step-tag">STEP 01</span>
           <div class="step-number">01</div>
-          <h3>Business ke baare mein batayein</h3>
-          <p>Business name, category, city, audience, main offer aur marketing goal select karein.</p>
+          <h3>Tell us about your business</h3>
+          <p>
+            Share your business name, category, city, audience, main service
+            and marketing goal in the request form.
+          </p>
         </article>
 
-        <article class="info-card">
+        <article class="info-card how-step-card reveal">
+          <span class="how-step-tag">STEP 02</span>
           <div class="step-number">02</div>
-          <h3>AI aapka plan banata hai</h3>
-          <p>AI aapke details ke basis par captions, Reel scripts, content calendar aur offer ideas prepare karta hai.</p>
+          <h3>We review and tailor the ideas</h3>
+          <p>
+            Your details help us prepare relevant content topics, Reel ideas,
+            caption directions and promotion suggestions.
+          </p>
         </article>
 
-        <article class="info-card">
+        <article class="info-card how-step-card reveal">
+          <span class="how-step-tag">STEP 03</span>
           <div class="step-number">03</div>
-          <h3>Edit, post aur grow karein</h3>
-          <p>Plan ko review karein, apne brand ke hisaab se edit karein aur Instagram/WhatsApp par use karein.</p>
+          <h3>Review before you publish</h3>
+          <p>
+            Check every price, offer, service and claim. Edit the suggestions
+            to match your real business before posting.
+          </p>
         </article>
       </div>
 
-      <div class="note-box">
-        Har AI-generated offer, price, claim aur message ko publish karne se pehle business owner ko verify karna chahiye.
+      <div class="note-box reveal">
+        Your request is not an automatic AI-generated plan yet. We review the
+        submitted details and share the next steps.
       </div>
     </section>
 
-    <section class="orange-section section">
-      <div class="feature-showcase">
-        <div>
-          <p class="eyebrow">Example</p>
-          <h2>Salon owner ke liye ek plan kaisa dikhega?</h2>
+    <!-- SAMPLE PLAN -->
+    <section class="orange-section section how-example-section">
+      <div class="feature-showcase how-example-card">
+        <div class="reveal from-left">
+          <p class="eyebrow">Sample example</p>
+
+          <h2>What could a local business plan include?</h2>
+
           <p>
-            “Glow &amp; Go Salon, Vijay Nagar, Indore” ke liye LocalBoost content mix mein
-            weekday offer, customer trust Reel, hairstyle tip aur returning-customer WhatsApp draft suggest kar sakta hai.
+            For a sample salon in Vijay Nagar, Indore, a plan might include
+            a weekday promotion idea, a hair-care tip, a trainer/staff-led
+            Reel concept, a customer trust post and an opt-in WhatsApp draft.
           </p>
-          <br>
-          <a href="generator.html" class="button button-primary">Apna example plan banayein</a>
+
+          <p class="how-example-note">
+            This is an example preview—not a verified result or a promise of sales.
+          </p>
+
+          <a href="generator.html" class="button button-primary">
+            Request a plan for my business
+          </a>
         </div>
 
-        <div class="calendar-preview">
-          <div class="calendar-item"><span>DAY 1 · OFFER</span><strong>Weekday beauty special</strong></div>
-          <div class="calendar-item"><span>DAY 2 · TIP</span><strong>3 hairstyle mistakes</strong></div>
-          <div class="calendar-item"><span>DAY 3 · REEL</span><strong>Before/after transformation</strong></div>
-          <div class="calendar-item"><span>DAY 4 · TRUST</span><strong>Customer feedback post</strong></div>
-          <div class="calendar-item"><span>DAY 5 · LOCAL</span><strong>Vijay Nagar weekend plan</strong></div>
-          <div class="calendar-item"><span>DAY 6 · ENGAGE</span><strong>Pick your party look</strong></div>
+        <div class="calendar-preview stagger-parent reveal from-right">
+          <div class="calendar-item reveal">
+            <span>DAY 1 · OFFER IDEA</span>
+            <strong>Weekday beauty service promotion</strong>
+          </div>
+
+          <div class="calendar-item reveal">
+            <span>DAY 2 · EDUCATION</span>
+            <strong>Simple hair-care tip</strong>
+          </div>
+
+          <div class="calendar-item reveal">
+            <span>DAY 3 · REEL IDEA</span>
+            <strong>Behind-the-scenes salon Reel</strong>
+          </div>
+
+          <div class="calendar-item reveal">
+            <span>DAY 4 · TRUST</span>
+            <strong>Share a real customer review</strong>
+          </div>
+
+          <div class="calendar-item reveal">
+            <span>DAY 5 · LOCAL</span>
+            <strong>Area-focused weekend post</strong>
+          </div>
+
+          <div class="calendar-item reveal">
+            <span>DAY 6 · ENGAGEMENT</span>
+            <strong>Ask customers to choose a style</strong>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <!-- WHAT TO PREPARE -->
+    <section class="section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Prepare before you start</p>
+        <h2>What details will help us make your plan relevant?</h2>
+        <p>
+          More accurate business details make it easier to prepare useful,
+          realistic marketing suggestions.
+        </p>
+      </div>
+
+      <div class="how-prepare-grid stagger-parent">
+        <article class="how-prepare-card reveal">
+          <span>01</span>
+          <h3>Your service or product</h3>
+          <p>Tell us what your business sells or which services you provide.</p>
+        </article>
+
+        <article class="how-prepare-card reveal">
+          <span>02</span>
+          <h3>Your city and area</h3>
+          <p>Share your city and neighbourhood so local ideas can be more relevant.</p>
+        </article>
+
+        <article class="how-prepare-card reveal">
+          <span>03</span>
+          <h3>Your real offer</h3>
+          <p>Share the actual price, offer dates and conditions. Do not invent these.</p>
+        </article>
+
+        <article class="how-prepare-card reveal">
+          <span>04</span>
+          <h3>Your marketing goal</h3>
+          <p>Choose whether you want more enquiries, bookings, visits or repeat customers.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TRUST NOTE -->
+    <section class="how-trust-section">
+      <div class="how-trust-inner reveal">
+        <div>
+          <p class="how-trust-eyebrow">Accuracy comes first</p>
+          <h2>Review your plan before you use it.</h2>
+          <p>
+            LocalBoost ideas are starting points. Confirm the business facts,
+            offer terms, prices, photos and claims before publishing.
+          </p>
+        </div>
+
+        <div class="how-trust-list">
+          <p>✓ Use real services and current prices</p>
+          <p>✓ Use photos you have permission to share</p>
+          <p>✓ Avoid guaranteed sales or results claims</p>
+          <p>✓ Message customers only with appropriate consent</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="section">
+      <div class="how-final-cta reveal">
+        <p class="eyebrow">Ready to begin?</p>
+        <h2>Share your business details and request your plan.</h2>
+        <p>
+          Start with a clear goal and the real information about your business.
+        </p>
+
+        <a href="generator.html" class="button button-primary">
+          Start my plan request →
+        </a>
       </div>
     </section>
   </main>
+<!-- Footer aur chatbot shared files se load honge -->
+<div id="sharedFooter"></div>
+<div id="sharedChatbot"></div>
 
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <a href="index.html" class="logo">LocalBoost AI</a>
-        <p class="footer-description">Local businesses ke liye simple, practical AI marketing.</p>
-      </div>
-      <div class="footer-links">
-        <a href="how-it-works.html">How it works</a>
-        <a href="features.html">Features</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="resources.html">Resources</a>
-        <a href="generator.html">Start free</a>
-      </div>
-    </div>
-    <p class="copyright">© 2026 LocalBoost AI. Demo website.</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="shared-layout.js"></script>
+</body>
+</html>
 </body>
 </html>

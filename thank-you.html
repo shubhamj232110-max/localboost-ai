@@ -1,18 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Your LocalBoost AI plan request was received.">
-  <title>Plan Request Received | LocalBoost AI</title>
+
+  <meta
+    name="description"
+    content="Aapka LocalBoost AI marketing plan request receive ho gaya hai."
+  >
+
+  <title>Request Received | LocalBoost AI</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body>
+  <!-- NAVBAR -->
   <header class="navbar">
     <a href="index.html" class="logo">LocalBoost AI</a>
 
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="how-it-works.html">How it works</a>
       <a href="features.html">Features</a>
@@ -21,43 +32,50 @@
       <a href="generator.html" class="nav-cta">Free plan banayein</a>
     </nav>
 
-    <button class="menu-button" aria-label="Open navigation menu">☰</button>
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Navigation menu kholen"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
   </header>
 
+  <!-- MAIN CONTENT -->
   <main>
     <section class="page-hero">
       <div class="page-hero-content">
         <p class="eyebrow">Request received</p>
+
         <h1>Shukriya! Aapka plan request receive ho gaya.</h1>
+
         <p>
-          Hum aapke business details review karenge. Aapke email par
-          next steps ya starter marketing plan bheja jayega.
+          Hum aapke business details review karenge. Aapke diye gaye email
+          address par next steps bheje jayenge.
         </p>
 
-        <div style="margin-top:28px;">
-          <a href="index.html" class="button button-primary">Home par wapas jaayein</a>
-          <a href="pricing.html" class="button button-secondary">Plans dekhein</a>
+        <div class="thank-you-actions">
+          <a href="index.html" class="button button-primary">
+            Home par wapas jaayein
+          </a>
+
+          <a href="pricing.html" class="button button-secondary">
+            Plans dekhein
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <a href="index.html" class="logo">LocalBoost AI</a>
-        <p class="footer-description">Local businesses ke liye simple, practical AI marketing.</p>
-      </div>
-      <div class="footer-links">
-        <a href="how-it-works.html">How it works</a>
-        <a href="features.html">Features</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="resources.html">Resources</a>
-      </div>
-    </div>
-    <p class="copyright">© 2026 LocalBoost AI. All rights reserved.</p>
-  </footer>
+ <!-- Footer aur chatbot shared files se load honge -->
+<div id="sharedFooter"></div>
+<div id="sharedChatbot"></div>
 
-  <script src="script.js"></script>
+<script src="shared-layout.js"></script>
 </body>
 </html>
+</body>
+</html>
+

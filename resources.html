@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Free local marketing resources, templates and guides from LocalBoost AI.">
+
+  <meta
+    name="description"
+    content="Practical local marketing guides, content ideas and checklists from LocalBoost AI."
+  >
+
   <title>Resources | LocalBoost AI</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
 
+<body class="resources-page">
+
+  <!-- NAVBAR -->
   <header class="navbar">
     <a href="index.html" class="logo">LocalBoost AI</a>
 
-    <nav class="nav-links">
+    <nav class="nav-links" id="navLinks">
       <a href="index.html">Home</a>
       <a href="how-it-works.html">How it works</a>
       <a href="features.html">Features</a>
@@ -21,90 +32,242 @@
       <a href="generator.html" class="nav-cta">Free plan banayein</a>
     </nav>
 
-    <button class="menu-button" aria-label="Open navigation menu">☰</button>
+    <button
+      class="menu-button"
+      id="menuButton"
+      type="button"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
   </header>
 
   <main>
-    <section class="page-hero">
-      <div class="page-hero-content">
-        <p class="eyebrow">Free learning resources</p>
-        <h1>Local marketing ko step-by-step samjhein.</h1>
-        <p>Future mein yahan category guides, templates, content examples aur beginner-friendly articles honge.</p>
+
+    <!-- HERO -->
+    <section class="resources-hero">
+      <span class="resources-sparkle resource-sparkle-one" aria-hidden="true">✦</span>
+      <span class="resources-sparkle resource-sparkle-two" aria-hidden="true">✧</span>
+      <span class="resources-sparkle resource-sparkle-three" aria-hidden="true">✦</span>
+
+      <div class="resources-hero-content reveal">
+        <p class="eyebrow">LocalBoost learning hub</p>
+
+        <h1>Practical marketing resources for local businesses.</h1>
+
+        <p>
+          Explore useful starting points for content, Reels, customer follow-up
+          and local promotions. Adapt every idea to your real business.
+        </p>
+
+        <a href="#resource-library" class="button button-primary">
+          Explore resources ↓
+        </a>
+      </div>
+
+      <div class="resources-hero-mark" aria-hidden="true">
+        <span>LB</span>
+        <i>✦</i>
       </div>
     </section>
 
-    <section class="section">
-      <div class="three-column">
-        <article class="resource-card">
-          <span class="resource-tag">Salon guide</span>
-          <h3>Salon ke liye 30 marketing ideas</h3>
-          <p>Bookings, party looks, weekday offers aur returning customers ke liye post ideas.</p>
-          <a class="button button-secondary" href="generator.html">Free plan banayein</a>
+    <!-- RESOURCE LIBRARY -->
+    <section class="section resources-library" id="resource-library">
+      <div class="section-heading reveal">
+        <p class="eyebrow">Browse by topic</p>
+        <h2>Choose a resource to get started</h2>
+        <p>
+          These cards describe the kind of support LocalBoost can help you request.
+          Some downloadable guides may be added later.
+        </p>
+      </div>
+
+      <div class="resources-grid stagger-parent">
+
+        <!-- SALON -->
+        <article class="resource-card resource-card-enhanced reveal">
+          <div class="resource-card-top">
+            <span class="resource-tag">Salon &amp; beauty</span>
+            <span class="resource-icon" aria-hidden="true">✦</span>
+          </div>
+
+          <h3>Salon content and offer ideas</h3>
+
+          <p>
+            Explore starting ideas for service posts, hair-care tips,
+            appointment reminders and weekday promotions.
+          </p>
+
+          <a
+            class="resource-link"
+            href="generator.html?category=salon"
+          >
+            Request a salon plan <span aria-hidden="true">→</span>
+          </a>
         </article>
 
-        <article class="resource-card">
-          <span class="resource-tag">Restaurant guide</span>
-          <h3>Café aur restaurant content ideas</h3>
-          <p>Menu posts, customer reviews, weekday offers aur local food lovers ke liye content angles.</p>
-          <a class="button button-secondary" href="generator.html">Free plan banayein</a>
+        <!-- RESTAURANT -->
+        <article class="resource-card resource-card-enhanced reveal">
+          <div class="resource-card-top">
+            <span class="resource-tag">Restaurant &amp; café</span>
+            <span class="resource-icon" aria-hidden="true">☕</span>
+          </div>
+
+          <h3>Restaurant and café content ideas</h3>
+
+          <p>
+            Use menu highlights, customer questions, local occasions
+            and clear calls to action as content starting points.
+          </p>
+
+          <a
+            class="resource-link"
+            href="generator.html?category=restaurant"
+          >
+            Request a restaurant plan <span aria-hidden="true">→</span>
+          </a>
         </article>
 
-        <article class="resource-card">
-          <span class="resource-tag">Fitness guide</span>
-          <h3>Gym leads ke liye Reel ideas</h3>
-          <p>Trial offers, beginner tips, challenges aur member-focused content concepts.</p>
-          <a class="button button-secondary" href="generator.html">Free plan banayein</a>
+        <!-- GYM -->
+        <article class="resource-card resource-card-enhanced reveal">
+          <div class="resource-card-top">
+            <span class="resource-tag">Gym &amp; fitness</span>
+            <span class="resource-icon" aria-hidden="true">↗</span>
+          </div>
+
+          <h3>Gym Reels and local growth ideas</h3>
+
+          <p>
+            See trainer-led Reel hooks, local visibility actions,
+            member check-ins and offer concepts for gyms.
+          </p>
+
+          <a
+            class="resource-link"
+            href="gym-growth-plan.html"
+          >
+            View Gym Growth Plan <span aria-hidden="true">→</span>
+          </a>
         </article>
 
-        <article class="resource-card">
-          <span class="resource-tag">Template</span>
-          <h3>WhatsApp reactivation message</h3>
-          <p>Purane opted-in customers ko respectful way mein offer ya booking reminder bhejne ka draft.</p>
-          <a class="button button-secondary" href="generator.html">Template dekhein</a>
+        <!-- WHATSAPP -->
+        <article class="resource-card resource-card-enhanced reveal">
+          <div class="resource-card-top">
+            <span class="resource-tag">Customer follow-up</span>
+            <span class="resource-icon" aria-hidden="true">◌</span>
+          </div>
+
+          <h3>WhatsApp follow-up ideas</h3>
+
+          <p>
+            Plan respectful appointment, reactivation and customer follow-up
+            drafts for people who agreed to receive messages.
+          </p>
+
+          <a
+            class="resource-link"
+            href="generator.html"
+          >
+            Request a plan <span aria-hidden="true">→</span>
+          </a>
         </article>
 
-        <article class="resource-card">
-          <span class="resource-tag">Checklist</span>
-          <h3>Phone se Reel banane ki checklist</h3>
-          <p>Hook, lighting, short scenes, captions aur CTA ko simple way mein plan karein.</p>
-          <a class="button button-secondary" href="generator.html">Checklist dekhein</a>
+        <!-- REELS -->
+        <article class="resource-card resource-card-enhanced reveal">
+          <div class="resource-card-top">
+            <span class="resource-tag">Reel checklist</span>
+            <span class="resource-icon" aria-hidden="true">▶</span>
+          </div>
+
+          <h3>Simple phone-shot Reel checklist</h3>
+
+          <p>
+            Start with a clear hook, stable framing, useful visuals,
+            readable text and one relevant next step for the viewer.
+          </p>
+
+          <a
+            class="resource-link"
+            href="features.html"
+          >
+            See Reel features <span aria-hidden="true">→</span>
+          </a>
         </article>
 
-        <article class="resource-card">
-          <span class="resource-tag">Coming soon</span>
-          <h3>Festival campaign starter pack</h3>
-          <p>Festival season ke liye ethical promotional ideas aur content starter templates.</p>
-          <a class="button button-secondary" href="generator.html">Updates paayein</a>
+        <!-- FESTIVAL -->
+        <article class="resource-card resource-card-enhanced reveal">
+          <div class="resource-card-top">
+            <span class="resource-tag">Seasonal marketing</span>
+            <span class="resource-icon" aria-hidden="true">✧</span>
+          </div>
+
+          <h3>Seasonal campaign planning</h3>
+
+          <p>
+            Plan ahead for relevant local dates. Verify dates, offer terms
+            and inventory before publishing a campaign.
+          </p>
+
+          <a
+            class="resource-link"
+            href="generator.html"
+          >
+            Request campaign ideas <span aria-hidden="true">→</span>
+          </a>
         </article>
+
       </div>
     </section>
 
-    <section class="light-section section">
-      <div class="section-heading">
-        <p class="eyebrow">Useful rule</p>
-        <h2>Copy mat kijiye—apne business ke liye personalize kijiye.</h2>
-        <p>Best local marketing wahi hoti hai jisme business ka real offer, photos, customer service aur city context dikhta hai.</p>
+    <!-- USEFUL GUIDANCE -->
+    <section class="resources-tip-section">
+      <div class="resources-tip-inner reveal">
+        <div>
+          <p class="eyebrow">A useful rule</p>
+          <h2>Use ideas as a starting point. Make them true for your business.</h2>
+          <p>
+            Add your real services, photos, prices, availability and local details.
+            Review every claim before publishing.
+          </p>
+        </div>
+
+        <div class="resources-tip-list">
+          <div>✓ Use current prices and genuine offers</div>
+          <div>✓ Use photos you have permission to publish</div>
+          <div>✓ Avoid guaranteed sales or results claims</div>
+          <div>✓ Send WhatsApp promotions only with appropriate consent</div>
+        </div>
       </div>
     </section>
+
+    <!-- FINAL CTA -->
+    <section class="section resources-final-section">
+      <div class="resources-final-card reveal">
+        <p class="eyebrow">Make it specific to your business</p>
+
+        <h2>Want a plan based on your business, city and goal?</h2>
+
+        <p>
+          Send a plan request with your business details. This current version
+          collects a request; automatic AI plan generation is not connected yet.
+        </p>
+
+        <a href="generator.html" class="button button-primary">
+          Request my free plan →
+        </a>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <a href="index.html" class="logo">LocalBoost AI</a>
-        <p class="footer-description">Local businesses ke liye simple, practical AI marketing.</p>
-      </div>
-      <div class="footer-links">
-        <a href="how-it-works.html">How it works</a>
-        <a href="features.html">Features</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="resources.html">Resources</a>
-        <a href="generator.html">Start free</a>
-      </div>
-    </div>
-    <p class="copyright">© 2026 LocalBoost AI. Demo website.</p>
-  </footer>
+ <!-- Footer aur chatbot shared files se load honge -->
+<div id="sharedFooter"></div>
+<div id="sharedChatbot"></div>
 
+<script src="shared-layout.js"></script>
+</body>
+</html>
   <script src="script.js"></script>
 </body>
 </html>
