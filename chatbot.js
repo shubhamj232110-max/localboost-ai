@@ -40,10 +40,14 @@
     "knowledge/general/general.jsonl",
     "knowledge/science/science.jsonl",
     "knowledge/science/artificial_intelligence.jsonl",
+    "knowledge/general/everyday_gk.jsonl",
     "knowledge/maths/maths.jsonl",
     "knowledge/programming/programming.jsonl",
     "knowledge/hindi_english/hindi_english.jsonl",
     "knowledge/conversation/conversation.jsonl",
+    "knowledge/conversation/everyday.jsonl",
+    "knowledge/conversation/daily_life.jsonl",
+    "knowledge/conversation/shubham_overview.jsonl",
     "knowledge/reasoning/reasoning.jsonl",
     "knowledge/computer/computer.jsonl",
     "knowledge/writing/writing.jsonl",
@@ -52,14 +56,156 @@
   ];
 
   const ignoredSearchWords = new Set([
-    "a", "an", "and", "are", "can", "do", "does", "for", "how", "i",
-    "in", "is", "it", "ka", "kya", "me", "mujhe", "of", "please", "the",
-    "to", "what", "when", "where", "which", "who", "why", "with", "you",
-    "hai", "hain", "ho", "kaise", "ke", "ki", "ko", "mein", "mujhko",
-    "par", "se", "tha", "the", "thi", "tell", "about", "explain", "meaning",
-    "definition", "information", "simple", "hindi", "samjhao", "karta",
-    "karte", "work", "works", "working", "does"
+    "a", "an", "and", "are", "about", "at", "can", "could", "describe",
+    "definition", "detail", "details", "do", "does", "explain", "for",
+    "give", "hai", "hain", "ho", "how", "hota", "hoti", "hote", "hua", "hui",
+    "hue", "i", "in", "information", "info", "is", "it", "ka", "kaise",
+    "kare", "karen", "karein", "karna", "karo", "karu", "karun", "karta",
+    "karte", "ke", "ki", "kind", "kindly", "ko", "kuch", "me", "mein",
+    "kya", "meaning", "more", "mujhe", "mujhko", "of", "on", "par", "please",
+    "plz", "se", "simple", "the", "to", "what", "when", "where", "which",
+    "tha", "thi", "who", "why", "with", "would", "work", "working", "works", "you",
+    "batao", "btao", "bta", "bataye", "bataiye", "bare", "baare", "zara",
+    "hindi", "samjhao", "tell", "know", "want", "well", "as"
   ]);
+
+  const searchSynonyms = new Map([
+    ["capital", "rajdhani"],
+    ["creator", "create"],
+    ["created", "create"],
+    ["developer", "create"],
+    ["developed", "create"],
+    ["built", "create"],
+    ["made", "create"],
+    ["education", "padhai"],
+    ["study", "padhai"],
+    ["studied", "padhai"],
+    ["studies", "padhai"],
+    ["school", "padhai"],
+    ["college", "padhai"],
+    ["goals", "goal"],
+    ["objectives", "goal"],
+    ["dreams", "goal"],
+    ["skills", "skill"],
+    ["technologies", "technology"],
+    ["tech", "technology"],
+    ["qualities", "khubi"],
+    ["strengths", "khubi"],
+    ["traits", "khubi"],
+    ["hobbies", "hobby"],
+    ["interests", "interest"],
+    ["project", "project"],
+    ["plans", "plan"],
+    ["programming", "programming"],
+    ["coding", "programming"],
+    ["software", "programming"],
+    ["computer", "computer"],
+    ["computing", "computer"],
+    ["problem", "problem"],
+    ["problems", "problem"],
+    ["sawaal", "question"],
+    ["sawal", "question"],
+    ["questions", "question"],
+    ["question", "question"]
+  ]);
+
+  const spellingAndMeaningVariants = new Map([
+    ["btao", "batao"],
+    ["bataye", "batao"],
+    ["bataiye", "batao"],
+    ["btaye", "batao"],
+    ["baare", "bare"],
+    ["baaray", "bare"],
+    ["baray", "bare"],
+    ["shubhamji", "shubham"],
+    ["jaiswalji", "jaiswal"],
+    ["padhayi", "padhai"],
+    ["padhaai", "padhai"],
+    ["studies", "padhai"],
+    ["studied", "padhai"],
+    ["studying", "padhai"],
+    ["student", "padhai"],
+    ["students", "padhai"],
+    ["padhte", "padhai"],
+    ["padhta", "padhai"],
+    ["padhti", "padhai"],
+    ["padh", "padhai"],
+    ["parhai", "padhai"],
+    ["course", "padhai"],
+    ["courses", "padhai"],
+    ["language", "language"],
+    ["languages", "language"],
+    ["schooling", "padhai"],
+    ["education", "padhai"],
+    ["skills", "skill"],
+    ["abilities", "skill"],
+    ["capabilities", "skill"],
+    ["talents", "skill"],
+    ["technologies", "technology"],
+    ["tech", "technology"],
+    ["strengths", "khubi"],
+    ["qualities", "khubi"],
+    ["achievements", "achievement"],
+    ["achieved", "achievement"],
+    ["creator", "create"],
+    ["creators", "create"],
+    ["created", "create"],
+    ["developer", "create"],
+    ["developed", "create"],
+    ["built", "create"],
+    ["made", "create"],
+    ["programmer", "programming"],
+    ["programmers", "programming"],
+    ["coding", "programming"],
+    ["goals", "goal"],
+    ["dreams", "goal"],
+    ["objectives", "goal"],
+    ["hobbies", "hobby"],
+    ["interests", "interest"],
+    ["projects", "project"],
+    ["priorities", "priority"],
+    ["relationships", "relationship"],
+    ["love", "pyaar"],
+    ["pyar", "pyaar"],
+    ["affection", "pyaar"],
+    ["worried", "worry"],
+    ["worrying", "worry"],
+    ["overthinking", "overthink"],
+    ["overthinker", "overthink"],
+    ["stressed", "stress"],
+    ["stressing", "stress"],
+    ["anxious", "anxiety"],
+    ["nervous", "anxiety"],
+    ["sadness", "sad"],
+    ["loneliness", "lonely"],
+    ["confused", "confusion"],
+    ["confusing", "confusion"],
+    ["improve", "improvement"],
+    ["improving", "improvement"],
+    ["improvements", "improvement"],
+    ["manage", "management"],
+    ["managing", "management"],
+    ["managed", "management"],
+    ["remember", "memory"],
+    ["remembering", "memory"],
+    ["recall", "memory"],
+    ["reply", "response"],
+    ["respond", "response"],
+    ["responding", "response"],
+    ["answer", "response"],
+    ["answers", "response"],
+    ["difference", "difference"],
+    ["differences", "difference"],
+    ["compare", "comparison"],
+    ["comparing", "comparison"],
+    ["comparison", "comparison"],
+    ["formula", "formula"],
+    ["formulas", "formula"],
+    ["equation", "formula"],
+    ["equations", "formula"]
+  ]);
+
+  let indexedKnowledge = [];
 
   function scrollChatToBottom() {
     chatBody.scrollTop = chatBody.scrollHeight;
@@ -68,8 +214,172 @@
   function addMessage(text, sender) {
     const message = document.createElement("div");
     message.className = "lb-message " + sender;
-    message.textContent = text;
+    if (sender === "bot") {
+      const linkPattern = /https:\/\/[^\s]+/g;
+      let cursor = 0;
+      let match;
+
+      while ((match = linkPattern.exec(text)) !== null) {
+        const url = match[0].replace(/[),.;!?]+$/, "");
+        if (!url) continue;
+
+        message.appendChild(
+          document.createTextNode(text.slice(cursor, match.index))
+        );
+
+        const link = document.createElement("a");
+        link.href = url;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        link.textContent = url;
+        message.appendChild(link);
+        message.appendChild(
+          document.createTextNode(match[0].slice(url.length))
+        );
+        cursor = match.index + match[0].length;
+      }
+
+      message.appendChild(document.createTextNode(text.slice(cursor)));
+    } else {
+      message.textContent = text;
+    }
     chatBody.appendChild(message);
+    scrollChatToBottom();
+  }
+
+  function isProfileQuestion(question, reply) {
+    const text = question.toLowerCase();
+    const response = reply.toLowerCase();
+    const asksAboutShubham = isAboutShubhamQuestion(text);
+    const asksWhoCreated =
+      /\b(who made you|who created you|who created this chatbot|creator|developer|kisne banaya|tumhe kisne banaya|tumko kisne banaya|chatbot kisne banaya|chatbot ko kisne banaya)\b/.test(text);
+
+    return asksAboutShubham ||
+      asksWhoCreated ||
+      (response.includes("shubham jaiswal") &&
+        (response.includes("project manager") ||
+          response.includes("chatbot banaya")));
+  }
+
+  function isAboutShubhamQuestion(question) {
+    const mentionsShubham = /\b(?:shubham|jaiswal)\b/.test(question);
+    const normalizedQuestion = searchTokens(question).join(" ");
+    const asksAboutHim =
+      /\b(?:about|who|profile|bio|tell|describe|goal|skill|education|study|project|quality|qualities|strength|interest|career|padhai|kaun|bata\w*|bare|baare|khubi|college|exam|startup)\b/.test(question) ||
+      /\b(?:mere|my)\s+(?:bare|baare)\b/.test(question) ||
+      /\b(?:ke|par|pe)\s+(?:bare|baare)\b/.test(question) ||
+      /\b(?:padhai|goal|skill|technology|project|khubi|career|college|exam|startup|profile|interest)\b/.test(normalizedQuestion);
+
+    return mentionsShubham && asksAboutHim;
+  }
+
+  function isFullShubhamProfileRequest(question) {
+    if (/^\s*(?:shubham|shubham jaiswal|jaiswal)\s*[?.!]*\s*$/.test(question)) {
+      return true;
+    }
+
+    if (!isAboutShubhamQuestion(question)) return false;
+
+    const normalizedQuestion = searchTokens(question).join(" ");
+    const asksSpecificTopic =
+      /\b(?:goal|skill|programming|language|technology|padhai|project|khubi|career|college|exam|startup|priority|interest)\b/.test(normalizedQuestion) ||
+      /\b(?:education|study|project|quality|strength|career|exam|startup|priorit\w*)\b/.test(question);
+    return !asksSpecificTopic;
+  }
+
+  function findShubhamTopicEntry(question) {
+    if (!/\b(?:shubham|jaiswal)\b/.test(question)) return null;
+    const normalizedQuestion = searchTokens(question).join(" ");
+
+    const topics = [
+      {
+        pattern: /\b(?:education|padhai|study|school|college)\b/,
+        question: "Shubham ki padhai aur education kya hai?"
+      },
+      {
+        pattern: /\b(?:goal|goals|sapne|career plans|future)\b/,
+        question: "Shubham ke goals aur career plans kya hain?"
+      },
+      {
+        pattern: /\b(?:skill|programming|technology|language)\b/,
+        question: "Shubham ko kaun si programming languages aur technologies aati hain?"
+      },
+      {
+        pattern: /\b(?:mps|municipal problem spotter)\b/,
+        question: "Shubham ka Municipal Problem Spotter project kya hai?"
+      },
+      {
+        pattern: /\b(?:local boost|localboost|startup)\b/,
+        question: "Shubham ka Local Boost AI project kya karta hai?"
+      },
+      {
+        pattern: /\b(?:learning style|kaise padhana|coding samjhana|feedback)\b/,
+        question: "Shubham ko kaise padhana ya programming samjhani chahiye?"
+      },
+      {
+        pattern: /\b(?:ssc|cgl|chsl|schedule|timetable)\b/,
+        question: "Shubham ki SSC aur college ki padhai ka schedule kya hai?"
+      },
+      {
+        pattern: /\b(?:strength|strengths|khubi|improve|improvement)\b/,
+        question: "Shubham ki strengths aur improvement ke areas kya hain?"
+      },
+      {
+        pattern: /\b(?:priorit|priority|priorities)\b/,
+        question: "Shubham ki abhi ki priorities kya hain?"
+      }
+    ];
+    const matchedTopic = topics.find(function (topic) {
+      return topic.pattern.test(normalizedQuestion) ||
+        topic.pattern.test(question);
+    });
+
+    return matchedTopic
+      ? knowledgeEntries.find(function (entry) {
+          return entry.question === matchedTopic.question;
+        }) || null
+      : null;
+  }
+
+  function addProfileSuggestions() {
+    const suggestions = [
+      ["Shubham ka full profile", "Shubham Jaiswal ke baare mein sab kuch batao"],
+      ["Padhai aur education", "Shubham ki padhai aur education kya hai?"],
+      ["Goals aur career plans", "Shubham ke goals aur sapne kya hain?"],
+      ["Programming skills", "Shubham ko kaun si programming languages aur technologies aati hain?"],
+      ["MPS project", "Shubham ka Municipal Problem Spotter project kya hai?"],
+      ["Local Boost AI", "Shubham ka Local Boost AI startup kya karta hai?"],
+      ["Learning style", "Shubham ko kaise padhana ya programming samjhani chahiye?"],
+      ["SSC aur college plans", "Shubham ki SSC aur college ki padhai ka schedule kya hai?"],
+      ["Strengths aur improvement", "Shubham apni kaun si strengths aur skills improve karna chahte hain?"],
+      ["Current priorities", "Shubham ki abhi ki priorities kya hain?"]
+    ];
+    const group = document.createElement("div");
+    group.className = "lb-profile-suggestions";
+    group.setAttribute("role", "group");
+    group.setAttribute("aria-label", "Shubham ke baare mein aur sawaal");
+
+    const label = document.createElement("span");
+    label.className = "lb-profile-suggestions-label";
+    label.textContent = "Shubham ke baare mein aur jaaniye";
+    group.appendChild(label);
+
+    suggestions.forEach(function (suggestion) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = suggestion[0];
+      button.addEventListener("click", function () {
+        if (isWaitingForReply) return;
+        group.remove();
+        sendMessage(suggestion[1]);
+      });
+      group.appendChild(button);
+    });
+
+    chatBody.querySelectorAll(".lb-profile-suggestions").forEach(function (existingGroup) {
+      existingGroup.remove();
+    });
+    chatBody.appendChild(group);
     scrollChatToBottom();
   }
 
@@ -136,7 +446,92 @@
       .split(/\s+/)
       .filter(function (word) {
         return word.length > 1 && !ignoredSearchWords.has(word);
+      })
+      .map(function (word) {
+        const variant = spellingAndMeaningVariants.get(word) || word;
+        return searchSynonyms.get(variant) || variant;
       });
+  }
+
+  function editDistanceAtMostOne(first, second) {
+    if (Math.abs(first.length - second.length) > 1) return false;
+
+    if (
+      first.length === second.length &&
+      first.length > 1
+    ) {
+      for (let index = 0; index < first.length - 1; index += 1) {
+        if (
+          first[index] !== second[index] &&
+          first[index] === second[index + 1] &&
+          first[index + 1] === second[index] &&
+          first.slice(index + 2) === second.slice(index + 2)
+        ) {
+          return true;
+        }
+      }
+    }
+
+    let firstIndex = 0;
+    let secondIndex = 0;
+    let differences = 0;
+
+    while (firstIndex < first.length && secondIndex < second.length) {
+      if (first[firstIndex] === second[secondIndex]) {
+        firstIndex += 1;
+        secondIndex += 1;
+        continue;
+      }
+
+      differences += 1;
+      if (differences > 1) return false;
+
+      if (first.length > second.length) {
+        firstIndex += 1;
+      } else if (second.length > first.length) {
+        secondIndex += 1;
+      } else {
+        firstIndex += 1;
+        secondIndex += 1;
+      }
+    }
+
+    if (firstIndex < first.length || secondIndex < second.length) {
+      differences += 1;
+    }
+
+    return differences <= 1;
+  }
+
+  function prepareKnowledgeIndex() {
+    const documentFrequency = new Map();
+
+    indexedKnowledge = knowledgeEntries.map(function (entry) {
+      const questionVariants = [entry.question].concat(entry.aliases || [])
+        .map(function (question) {
+          return searchTokens(question);
+        });
+      const questionTokens = new Set(
+        questionVariants.reduce(function (tokens, variant) {
+          return tokens.concat(variant);
+        }, [])
+      );
+      const keywordTokens = new Set(searchTokens(entry.keywords.join(" ")));
+      const allTokens = new Set([...questionTokens, ...keywordTokens]);
+
+      allTokens.forEach(function (token) {
+        documentFrequency.set(token, (documentFrequency.get(token) || 0) + 1);
+      });
+
+      return {
+        entry: entry,
+        questionTokens: questionTokens,
+        questionVariants: questionVariants,
+        keywordTokens: keywordTokens,
+        allTokens: allTokens
+      };
+    });
+
   }
 
   async function loadKnowledge() {
@@ -149,45 +544,64 @@
           );
         }
 
-        const text = await response.text();
-        return text
-          .split(/\r?\n/)
-          .filter(function (line) {
-            return line.trim();
-          })
-          .map(function (line, index) {
-            let entry;
-            try {
-              entry = JSON.parse(line);
-            } catch {
-              throw new Error(
-                fileName + " ki line " + (index + 1) + " valid JSON nahi hai."
-              );
-            }
+        const text = (await response.text()).replace(/^\uFEFF/, "").trim();
+        let entries;
 
-            if (
-              !entry ||
-              typeof entry.question !== "string" ||
-              typeof entry.answer !== "string" ||
-              !entry.question.trim() ||
-              !entry.answer.trim()
-            ) {
-              throw new Error(
-                fileName + " ki line " + (index + 1) +
-                  " mein question aur answer dono strings hone chahiye."
-              );
-            }
+        try {
+          entries = JSON.parse(text);
+        } catch {
+          try {
+            entries = JSON.parse("[" + text.replace(/^,\s*/, "") + "]");
+          } catch {
+            entries = text
+              .split(/\r?\n/)
+              .filter(function (line) {
+                return line.trim();
+              })
+              .map(function (line, index) {
+                try {
+                  return JSON.parse(line);
+                } catch {
+                  throw new Error(
+                    fileName + " ki line " + (index + 1) +
+                      " valid JSON nahi hai."
+                  );
+                }
+              });
+          }
+        }
 
-            return {
-              question: entry.question,
-              answer: entry.answer,
-              keywords: Array.isArray(entry.keywords)
-                ? entry.keywords.filter(function (keyword) {
-                    return typeof keyword === "string";
-                  })
-                : []
-            };
-          });
+        if (!Array.isArray(entries)) entries = [entries];
+
+        return entries.map(function (entry, index) {
+          if (
+            !entry ||
+            typeof entry.question !== "string" ||
+            typeof entry.answer !== "string" ||
+            !entry.question.trim() ||
+            !entry.answer.trim()
+          ) {
+            throw new Error(
+              fileName + " ke record " + (index + 1) +
+                " mein question aur answer dono strings hone chahiye."
+            );
+          }
+
+          return {
+            question: entry.question,
+            answer: entry.answer,
+            keywords: Array.isArray(entry.keywords)
+              ? entry.keywords.filter(function (keyword) {
+                  return typeof keyword === "string";
+                })
+              : [],
+            aliases: Array.isArray(entry.aliases)
+              ? entry.aliases.filter(function (alias) {
+                  return typeof alias === "string" && alias.trim();
+                })
+              : []
+          };
+        });
       })
     );
 
@@ -203,6 +617,7 @@
       }
     });
 
+    prepareKnowledgeIndex();
     statusText.textContent = knowledgeLoadFailed
       ? "Kuch jaankari abhi nahi mil rahi"
       : "Ready to help • Hindi & English";
@@ -215,34 +630,105 @@
 
   function findKnowledgeEntry(userText) {
     const queryTokens = Array.from(new Set(searchTokens(userText)));
-    if (queryTokens.length === 0 || knowledgeEntries.length === 0) return null;
+    if (queryTokens.length === 0 || indexedKnowledge.length === 0) return null;
 
-    let bestEntry = null;
-    let bestScore = 0;
-
-    knowledgeEntries.forEach(function (entry) {
-      const documentTokens = new Set(
-        searchTokens(entry.question + " " + entry.keywords.join(" "))
+    const queryWeights = new Map();
+    queryTokens.forEach(function (token) {
+      const tokenFrequency = indexedKnowledge.reduce(function (count, item) {
+        return count + (item.allTokens.has(token) ? 1 : 0);
+      }, 0);
+      queryWeights.set(
+        token,
+        Math.log(1 + (indexedKnowledge.length + 1) / (tokenFrequency + 1))
       );
-      let matchedTokens = 0;
-      queryTokens.forEach(function (token) {
-        if (documentTokens.has(token)) matchedTokens += 1;
-      });
-
-      if (matchedTokens === 0) return;
-
-      const coverage = matchedTokens / queryTokens.length;
-      const exactPhrase = searchTokens(entry.question).join(" ") ===
-        queryTokens.join(" ");
-      const score = coverage + (exactPhrase ? 1 : 0);
-
-      if (score > bestScore) {
-        bestScore = score;
-        bestEntry = entry;
-      }
     });
 
-    return bestScore >= 0.6 ? bestEntry : null;
+    const rankedMatches = [];
+
+    indexedKnowledge.forEach(function (record) {
+      let totalWeight = 0;
+      let matchedWeight = 0;
+      let questionWeight = 0;
+      let questionMatchedWeight = 0;
+      let keywordMatchedWeight = 0;
+      let exactMatches = 0;
+      let fuzzyMatches = 0;
+
+      queryTokens.forEach(function (token) {
+        const weight = queryWeights.get(token);
+        totalWeight += weight;
+        const inQuestion = record.questionTokens.has(token);
+        if (inQuestion) questionWeight += weight;
+
+        const exactMatch = record.allTokens.has(token);
+        let matched = exactMatch;
+        if (!matched && token.length >= 5) {
+          matched = Array.from(record.allTokens.keys()).some(function (candidate) {
+            return candidate.length >= 5 &&
+              editDistanceAtMostOne(token, candidate);
+          });
+        }
+        if (!matched) return;
+
+        matchedWeight += weight;
+        exactMatches += 1;
+        if (!exactMatch) fuzzyMatches += 1;
+        if (inQuestion) {
+          questionMatchedWeight += weight;
+        } else if (record.keywordTokens.has(token)) {
+          keywordMatchedWeight += weight;
+        }
+      });
+
+      if (matchedWeight === 0 || totalWeight === 0) return;
+
+      const queryCoverage = matchedWeight / totalWeight;
+      const questionCoverage = questionWeight === 0
+        ? 0
+        : questionMatchedWeight / questionWeight;
+      const coverage = exactMatches / queryTokens.length;
+      const score =
+        queryCoverage * 0.52 +
+        questionCoverage * 0.32 +
+        (keywordMatchedWeight > 0 ? 0.06 : 0) +
+        (coverage === 1 ? 0.05 : 0) -
+        (fuzzyMatches / queryTokens.length) * 0.08;
+      const exactPhrase = record.questionVariants.some(function (variant) {
+        return variant.length === queryTokens.length &&
+          variant.every(function (token, index) {
+            return token === queryTokens[index];
+          });
+      });
+
+      rankedMatches.push({
+        entry: record.entry,
+        score: score,
+        coverage: coverage,
+        queryCoverage: queryCoverage,
+        exactPhrase: exactPhrase
+      });
+    });
+
+    rankedMatches.sort(function (first, second) {
+      return (
+        Number(second.exactPhrase) - Number(first.exactPhrase) ||
+        second.score - first.score
+      );
+    });
+
+    const best = rankedMatches[0];
+    const next = rankedMatches[1];
+    const minimumCoverage = queryTokens.length === 1 ? 1 : 0.65;
+    if (
+      !best ||
+      best.queryCoverage < 0.62 ||
+      best.coverage < minimumCoverage ||
+      (next && !best.exactPhrase && best.score - next.score < 0.025)
+    ) {
+      return null;
+    }
+
+    return best.entry;
   }
 
   function getGeneralKnowledgeReply(text) {
@@ -533,7 +1019,7 @@
 
     if (
       text.includes("what is ai") ||
-      text.includes("ai kya") ||
+      /\bai\s+kya\b/.test(text) ||
       text.includes("artificial intelligence") ||
       text.includes("एआई क्या")
     ) {
@@ -648,8 +1134,121 @@
     return "";
   }
 
+  function getEmotionReply(text) {
+    if (
+      /\b(?:want to die|want to kill myself|kill myself|end my life|self[- ]harm|hurt myself|thinking about suicide|suicidal)\b/.test(text) ||
+      /(?:khudkushi|aatmahatya|khud ko (?:khatam|nuksan)|jeene ka mann nahi|mar jana chahta|mar jana chahti)/.test(text)
+    ) {
+      return "Mujhe afsos hai ki aap itni mushkil feeling se guzar rahe hain. Agar aapko lagta hai ki abhi khud ko nuksan pahunch sakta hai, akela na rahen—abhi kisi bharosemand insaan ko batayein aur local emergency service ya nearest hospital se madad lein. Agar aap India mein hain, Tele-MANAS ki official support information yahan hai: https://telemanas.mohfw.gov.in/ Kya aap is waqt turant khatre mein hain?";
+    }
+
+    const positiveEmotionWords = ["happy", "excited", "proud", "relieved"];
+    if (
+      (
+        /\b(?:i am|i'm|feeling|feel|so|really)?\s*(?:happy|excited|proud|relieved)\b/.test(text) ||
+        /(?:bahut khush|khushi ho rahi|aaj achha lag|maza aa raha)/.test(text)
+      ) &&
+      !hasNegatedEmotion(text, positiveEmotionWords)
+    ) {
+      return "Yeh sunkar achha laga! Kya koi khaas baat hui jiski wajah se aap khush ya excited hain?";
+    }
+
+    const stressEmotionWords = ["stressed", "stress", "overwhelmed"];
+    if (
+      /\b(?:stressed|stress|overwhelmed|under pressure|too much pressure)\b/.test(text) ||
+      /(?:tension ho rahi|bahut tension|pareshan hoon|dabav mehsoos|kaam ka pressure)/.test(text)
+    ) {
+      if (!hasNegatedEmotion(text, stressEmotionWords)) {
+        return "Lagta hai abhi kaafi pressure mehsoos ho raha hai. Ek chhota step lein: jo sabse zaroori hai use likhein, phir sirf agle 10 minute ka kaam chunein. Kisi bharosemand dost ya gharwale se baat karna bhi madad kar sakta hai. NHS mental-wellbeing tips: https://www.nhs.uk/every-mind-matters/mental-wellbeing-tips/";
+      }
+    }
+
+    const anxietyEmotionWords = ["anxious", "nervous", "worried", "scared", "afraid", "panic"];
+    if (
+      /\b(?:anxious|nervous|worried|scared|afraid|panic)\b/.test(text) ||
+      /(?:ghabrahat|ghabra raha|ghabra rahi|dar lag raha|chinta ho rahi)/.test(text)
+    ) {
+      if (!hasNegatedEmotion(text, anxietyEmotionWords)) {
+        return "Yeh feeling uncomfortable ho sakti hai. Abhi ek pal ruk kar dheere saans lein, aas-paas ki kisi ek cheez par dhyaan dein, aur dekhein ki is waqt kaunsa chhota kaam aapke control mein hai. Agar aap chahein, bataiye kis baat ko lekar ghabrahat hai.";
+      }
+    }
+
+    const lonelinessEmotionWords = ["lonely", "alone", "isolated"];
+    if (
+      /\b(?:lonely|alone|isolated|left out)\b/.test(text) ||
+      /(?:akela mehsoos|akeli mehsoos|tanha|koi saath nahi)/.test(text)
+    ) {
+      if (!hasNegatedEmotion(text, lonelinessEmotionWords)) {
+        return "Akela mehsoos karna bhaari lag sakta hai. Agar mumkin ho to kisi bharosemand dost ya family member ko ek chhota message bhejein—sirf baat shuru karna bhi theek hai. NHS mental-wellbeing tips mein logon se jude rehne ki salah hai: https://www.nhs.uk/mental-health/self-help/tips-and-support/cope-with-depression/";
+      }
+    }
+
+    const sadnessEmotionWords = ["sad", "down", "heartbroken", "upset", "crying", "unhappy"];
+    if (
+      /\b(?:sad|down|heartbroken|upset|crying|unhappy)\b/.test(text) ||
+      /\bnot happy\b/.test(text) ||
+      /(?:udaas|dukhi|mann kharab|rona aa raha|dil toot gaya)/.test(text)
+    ) {
+      if (!hasNegatedEmotion(text, sadnessEmotionWords)) {
+        return "Yeh sunkar afsos hua. Aap chahein to bata sakte hain kya hua—main bina judge kiye sunne ki koshish karunga. Kisi bharosemand insaan se baat karna aur routine mein chhote steps rakhna bhi madadgar ho sakta hai. NHS guidance: https://www.nhs.uk/mental-health/self-help/tips-and-support/cope-with-depression/";
+      }
+    }
+
+    const angerEmotionWords = ["angry", "furious", "irritated", "annoyed"];
+    if (
+      /\b(?:angry|furious|irritated|annoyed)\b/.test(text) ||
+      /(?:bahut gussa|gussa aa raha|chidchida)/.test(text)
+    ) {
+      if (!hasNegatedEmotion(text, angerEmotionWords)) {
+        return "Gussa aana kabhi-kabhi hota hai. Reply ya decision dene se pehle thoda pause lein; phir sochiye ki aapko kis baat ki zaroorat hai aur use shaant tareeqe se kaise kehna hai. Kya hua tha?";
+      }
+    }
+
+    return "";
+  }
+
+  function hasNegatedEmotion(text, emotionWords) {
+    return emotionWords.some(function (word) {
+      const escapedWord = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const negatedEmotion = new RegExp(
+        "\\b(?:not|never|dont|don't|doesn't|isn't|aren't|wasn't|weren't)\\b" +
+          "(?:\\s+[a-z']+){0,3}\\s+" +
+          escapedWord +
+          "\\b"
+      );
+      return negatedEmotion.test(text);
+    });
+  }
+
   function getReply(userText) {
     const text = userText.toLowerCase().trim();
+    const emotionReply = getEmotionReply(text);
+    if (emotionReply) return emotionReply;
+
+    if (isFullShubhamProfileRequest(text)) {
+      const profileEntry = knowledgeEntries.find(function (entry) {
+        return entry.question === "Shubham Jaiswal ke baare mein sab kuch batao";
+      });
+      if (profileEntry) {
+        lastTopicEntry = profileEntry;
+        return profileEntry.answer;
+      }
+    }
+
+    const shubhamTopicEntry = findShubhamTopicEntry(text);
+    if (shubhamTopicEntry) {
+      lastTopicEntry = shubhamTopicEntry;
+      return shubhamTopicEntry.answer;
+    }
+
+    if (
+      text.includes("i love you") ||
+      text.includes("love you") ||
+      text.includes("main tumse pyaar") ||
+      text.includes("मैं तुमसे प्यार")
+    ) {
+      return "Yeh bahut pyaari baat hai! Main AI chatbot hoon, isliye insaanon jaise jazbaat nahi hote, lekin main aapki madad ke liye yahan hoon.";
+    }
 
     if (
       lastTopicEntry &&
@@ -802,9 +1401,13 @@
 
     window.setTimeout(function () {
       removeTypingIndicator();
-      addMessage(getReply(text), "bot");
+      const reply = getReply(text);
+      addMessage(reply, "bot");
       lastUserQuestion = text;
       setBusy(false);
+      if (isProfileQuestion(text, reply)) {
+        addProfileSuggestions();
+      }
       chatInput.focus();
     }, 350);
   }

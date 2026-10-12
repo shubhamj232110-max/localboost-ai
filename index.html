@@ -6,10 +6,12 @@
 
   <meta
     name="description"
-    content="LocalBoost AI helps local businesses request practical marketing ideas, captions, Reel scripts and promotion ideas."
+    content="Plan your local business marketing with practical content ideas, captions, Reel scripts and promotion concepts from LocalBoost AI."
   >
 
-  <title>LocalBoost AI | Practical Marketing Plans for Local Businesses</title>
+  <meta name="theme-color" content="#182b6b">
+
+  <title>LocalBoost AI | Local Marketing, Made Easier to Plan</title>
 
   <!-- Bootstrap grid and Bootstrap Icons -->
   <link
@@ -33,7 +35,7 @@
     </a>
 
     <nav class="nav-links" aria-label="Main navigation">
-      <a class="active" href="index.html">Home</a>
+      <a class="active" href="index.html" aria-current="page">Home</a>
       <a href="how-it-works.html">How it works</a>
       <a href="features.html">Features</a>
       <a href="pricing.html">Pricing</a>
@@ -53,33 +55,37 @@
 
   <main>
     <!-- HERO -->
-    <section class="hero hero-animated-bg">
+    <section class="hero hero-animated-bg" aria-labelledby="home-title">
       <div class="hero-content reveal reveal-left">
-        <p class="eyebrow">Practical marketing support for local businesses</p>
+        <p class="eyebrow">Local marketing, made easier to plan</p>
 
-        <h1>
-          A custom 30-day marketing plan
-          <span id="typewriterText">built around your business.</span>
+        <h1 id="home-title">
+          Make your next 30 days of marketing clearer
+          <span id="typewriterText">one practical step at a time.</span>
         </h1>
 
         <p class="hero-text">
-          Tell us about your business, city, target customers and current offer.
-          We prepare practical content ideas, captions, phone-friendly Reel scripts,
-          local offer concepts and WhatsApp campaign drafts.
+          Share your business, city, customers and goals to request practical
+          content ideas, captions, phone-friendly Reel scripts and promotion
+          concepts you can review and adapt.
         </p>
 
         <div class="hero-buttons">
           <a href="generator.html" class="button button-primary">
-            Request my custom plan →
+            Tell us about your business →
           </a>
 
           <a href="#sample-preview" class="button button-secondary">
-            See a sample plan
+            Explore the sample
           </a>
         </div>
 
         <p class="trust-text">
-          Clear request process • Hindi, English and Hinglish support
+          For local businesses • Hindi, English and Hinglish
+        </p>
+
+        <p class="trust-text">
+          Demo notice: submitting a request does not generate an instant plan.
         </p>
       </div>
 
@@ -87,11 +93,11 @@
       <div
         class="dashboard sample-dashboard reveal reveal-right"
         id="sample-preview"
-        aria-label="Example marketing plan preview"
+        aria-label="Illustrative local-business marketing plan preview"
       >
         <div class="dashboard-top">
           <div>
-            <p class="small-label">Sample output preview</p>
+            <p class="small-label">Illustrative example · Not a customer result</p>
             <h2>Glow &amp; Go Salon</h2>
             <p class="muted">Vijay Nagar, Indore · Example only</p>
           </div>
@@ -129,30 +135,30 @@
 
         <div class="stats">
           <div class="stat">
-            <strong>30</strong>
-            <span>Content ideas</span>
+            <strong>Plan</strong>
+            <span>Content direction</span>
           </div>
 
           <div class="stat">
-            <strong>8</strong>
-            <span>Reel scripts</span>
+            <strong>Reels</strong>
+            <span>Script starters</span>
           </div>
 
           <div class="stat">
-            <strong>4</strong>
-            <span>WhatsApp drafts</span>
+            <strong>Drafts</strong>
+            <span>Opt-in messages</span>
           </div>
 
           <div class="stat">
-            <strong>1</strong>
-            <span>Custom plan</span>
+            <strong>Review</strong>
+            <span>Check every detail</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- TRUST STRIP -->
-    <section class="trust-strip reveal">
+    <section class="trust-strip reveal" aria-label="Who LocalBoost is for">
       <div>
         <strong>Made for local businesses</strong>
         <span>Salon, café, gym, boutique, coaching and service businesses</span>
@@ -183,7 +189,7 @@
           <div class="icon">✦</div>
           <h3>Share business details</h3>
           <p>
-            Add your business category, city, services, offer and marketing goal.
+            Share your business category, city, services and marketing goal.
           </p>
         </article>
 
@@ -192,8 +198,8 @@
           <div class="icon">⌁</div>
           <h3>Request a tailored plan</h3>
           <p>
-            Submit your details so your request can be reviewed for a useful,
-            local marketing direction.
+            Send your details for review. This demo does not instantly generate
+            or deliver a marketing plan.
           </p>
         </article>
 
@@ -212,12 +218,11 @@
     <section class="home-slider reveal">
       <p class="eyebrow slider-eyebrow">What a plan may include</p>
 
-      <h2>One business brief. A clear marketing direction.</h2>
+      <h2>Start with your business. Explore practical ideas.</h2>
 
       <p>
-        Simple, readable content guidance for busy local-business owners.
-        The sample above is illustrative; requests are reviewed and plans are
-        not generated automatically by this demo.
+      Get a feel for the kinds of content and promotion concepts you could
+      adapt to your business. The salon example above is illustrative only.
       </p>
 
       <div class="slider-content">
@@ -373,7 +378,7 @@
         </details>
 
         <details class="faq-item">
-          <summary>Will I receive an AI plan immediately after submitting?</summary>
+          <summary>Will a plan be generated as soon as I submit?</summary>
           <div class="faq-answer">
             <p>
               No. This demo does not automatically generate a plan. Submitted
@@ -399,15 +404,10 @@
     </section>
   </main>
 
- 
+  <!-- Footer and chatbot are loaded from shared components. -->
+  <div id="sharedFooter"></div>
+  <div id="sharedChatbot"></div>
 
- 
-<!-- Footer aur chatbot shared files se load honge -->
-<div id="sharedFooter"></div>
-<div id="sharedChatbot"></div>
-
-<script src="shared-layout.js"></script>
-</body>
-</html>  
+  <script src="shared-layout.js"></script>
 </body>
 </html>
