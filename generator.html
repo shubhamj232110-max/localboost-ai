@@ -5,13 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Free Marketing Plan | LocalBoost AI</title>
-
   <meta
     name="description"
     content="Apne local business ke liye personalized marketing plan request karein."
   >
 
+  <!-- Bootstrap grid CSS: footer columns ke liye -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Website CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <!-- Footer/social icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
+  >
 </head>
 
 <body>
@@ -42,9 +54,7 @@
     <section class="page-hero">
       <div class="page-hero-content">
         <p class="eyebrow">Free starter plan</p>
-
         <h1>Apne business ke liye marketing plan request karein.</h1>
-
         <p>
           Apne business ki basic details bharein. Form submit hone ke baad
           hum aapki request review karenge aur next steps email karenge.
@@ -56,9 +66,7 @@
       <div class="generator-layout">
         <aside class="generator-info">
           <p class="eyebrow" style="color:#b8c7ff;">LocalBoost AI</p>
-
           <h2>Aapko kya milega?</h2>
-
           <p>
             Aapki business details ke aadhar par ek practical local marketing
             plan request bheji jayegi.
@@ -297,33 +305,13 @@
     </section>
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <a href="index.html" class="logo">LocalBoost AI</a>
-        <p class="footer-description">
-          Local businesses ke liye simple, practical marketing.
-        </p>
-      </div>
+  <!-- Shared footer aur chatbot yahan load honge -->
+  <div id="sharedFooter"></div>
+  <div id="sharedChatbot"></div>
 
-      <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="how-it-works.html">How it works</a>
-        <a href="features.html">Features</a>
-        <a href="pricing.html">Pricing</a>
-        <a href="gym-growth-plan.html">Gym Plan</a>
-        <a href="resources.html">Resources</a>
-      </div>
-    </div>
-
-    <p class="copyright">© 2026 LocalBoost AI. All rights reserved.</p>
-  </footer>
-
-  <!-- Shared website script -->
-  <script src="script.js"></script>
-
-  <!-- Generator form script -->
   <script>
+    "use strict";
+
     const formUrlParams = new URLSearchParams(window.location.search);
     const generatorCategory = document.getElementById("category");
     const planField = document.getElementById("requestedPlanHidden");
@@ -364,22 +352,27 @@
     function updateProgress(stepNumber) {
       progressSteps.forEach(function (item) {
         const number = Number(item.dataset.progressStep);
+
         item.classList.toggle("active", number === stepNumber);
         item.classList.toggle("completed", number < stepNumber);
       });
 
       if (progressFillOne) {
-        progressFillOne.style.width = stepNumber >= 2 ? "100%" : "0%";
+        progressFillOne.style.width =
+          stepNumber >= 2 ? "100%" : "0%";
       }
 
       if (progressFillTwo) {
-        progressFillTwo.style.width = stepNumber >= 3 ? "100%" : "0%";
+        progressFillTwo.style.width =
+          stepNumber >= 3 ? "100%" : "0%";
       }
     }
 
     function showStep(stepNumber) {
       formSteps.forEach(function (step) {
-        const isCurrent = Number(step.dataset.formStep) === stepNumber;
+        const isCurrent =
+          Number(step.dataset.formStep) === stepNumber;
+
         step.hidden = !isCurrent;
         step.classList.toggle("active", isCurrent);
         step.classList.remove("leaving-next", "leaving-back");
@@ -426,8 +419,11 @@
         if (!validateCurrentStep()) return;
         if (currentStep >= formSteps.length) return;
 
-        const section = getStep(currentStep);
-        if (section) section.classList.add("leaving-next");
+        const currentSection = getStep(currentStep);
+
+        if (currentSection) {
+          currentSection.classList.add("leaving-next");
+        }
 
         window.setTimeout(function () {
           showStep(currentStep + 1);
@@ -439,8 +435,11 @@
       button.addEventListener("click", function () {
         if (currentStep <= 1) return;
 
-        const section = getStep(currentStep);
-        if (section) section.classList.add("leaving-back");
+        const currentSection = getStep(currentStep);
+
+        if (currentSection) {
+          currentSection.classList.add("leaving-back");
+        }
 
         window.setTimeout(function () {
           showStep(currentStep - 1);
@@ -457,97 +456,116 @@
         "is-error"
       );
 
-      if (state) submitButton.classList.add(state);
-      if (submitLabel && label) submitLabel.textContent = label;
+      if (state) {
+        submitButton.classList.add(state);
+      }
+
+      if (submitLabel && label) {
+        submitLabel.textContent = label;
+      }
 
       submitButton.disabled =
         state === "is-loading" || state === "is-success";
     }
 
-    function displayResponse(text, isError) {
+    function displayResponse(message, isError) {
       if (!formResponse) return;
 
       formResponse.hidden = false;
-      formResponse.textContent = text;
+      formResponse.textContent = message;
       formResponse.classList.toggle("error", Boolean(isError));
     }
 
     if (generatorForm) {
-      generatorForm.addEventListener("submit", async function (event) {
-        event.preventDefault();
+      generatorForm.addEventListener(
+        "submit",
+        async function (event) {
+          event.preventDefault();
 
-        if (!validateCurrentStep()) return;
+          if (!validateCurrentStep()) return;
 
-        if (!generatorForm.checkValidity()) {
-          const invalidField = generatorForm.querySelector(":invalid");
-          const invalidStep = invalidField
-            ? invalidField.closest("[data-form-step]")
-            : null;
+          if (!generatorForm.checkValidity()) {
+            const invalidField =
+              generatorForm.querySelector(":invalid");
 
-          if (invalidField && invalidStep) {
-            const invalidStepNumber = Number(
-              invalidStep.dataset.formStep
+            const invalidStep = invalidField
+              ? invalidField.closest("[data-form-step]")
+              : null;
+
+            if (invalidField && invalidStep) {
+              const invalidStepNumber = Number(
+                invalidStep.dataset.formStep
+              );
+
+              showStep(invalidStepNumber);
+
+              window.setTimeout(function () {
+                invalidField.reportValidity();
+                invalidField.focus();
+              }, 180);
+            }
+
+            return;
+          }
+
+          if (formResponse) {
+            formResponse.hidden = true;
+            formResponse.classList.remove("error");
+            formResponse.textContent = "";
+          }
+
+          setSubmitState("is-loading", "Sending request…");
+
+          try {
+            const response = await fetch(generatorForm.action, {
+              method: "POST",
+              body: new FormData(generatorForm),
+              headers: {
+                Accept: "application/json"
+              }
+            });
+
+            if (!response.ok) {
+              throw new Error(
+                "Formspree request failed: " + response.status
+              );
+            }
+
+            setSubmitState("is-success", "Request received ✓");
+
+            displayResponse(
+              "Thank you! Redirecting to confirmation page…",
+              false
             );
 
-            showStep(invalidStepNumber);
+            window.setTimeout(function () {
+              window.location.href = "./thank-you.html";
+            }, 1200);
+          } catch (error) {
+            console.error("Form submit error:", error);
+
+            setSubmitState(
+              "is-error",
+              "Could not send — try again"
+            );
+
+            displayResponse(
+              "Request send nahi ho paayi. Internet connection check karke dobara try karein.",
+              true
+            );
 
             window.setTimeout(function () {
-              invalidField.reportValidity();
-              invalidField.focus();
-            }, 180);
+              setSubmitState("", "Submit plan request →");
+            }, 2200);
           }
-
-          return;
         }
-
-        if (formResponse) {
-          formResponse.hidden = true;
-          formResponse.classList.remove("error");
-          formResponse.textContent = "";
-        }
-
-        setSubmitState("is-loading", "Sending request…");
-
-        try {
-          const response = await fetch(generatorForm.action, {
-            method: "POST",
-            body: new FormData(generatorForm),
-            headers: {
-              Accept: "application/json"
-            }
-          });
-
-          if (!response.ok) {
-            throw new Error("Formspree request failed.");
-          }
-
-          setSubmitState("is-success", "Request received ✓");
-
-          displayResponse(
-            "Thank you! Redirecting to confirmation page…",
-            false
-          );
-
-          // thank-you.html generator.html ke same folder mein hona chahiye.
-          window.setTimeout(function () {
-            window.location.href = "./thank-you.html";
-          }, 1200);
-        } catch (error) {
-          setSubmitState("is-error", "Could not send — try again");
-
-          displayResponse(
-            "Request send nahi ho paayi. Internet connection check karke dobara try karein.",
-            true
-          );
-
-          window.setTimeout(function () {
-            setSubmitState("", "Submit plan request →");
-          }, 2200);
-        }
-      });
+      );
     }
 
     updateProgress(1);
   </script>
+
+  <!-- Shared layout loader. Isse footer aur chatbot aayenge. -->
+  <script src="shared-layout.js"></script>
 </body>
 </html>

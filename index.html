@@ -6,406 +6,46 @@
 
   <meta
     name="description"
-    content="LocalBoost AI creates practical custom marketing plans, captions, Reel scripts and promotion ideas for local businesses."
+    content="Plan your local business marketing with practical content ideas, captions, Reel scripts and promotion concepts from LocalBoost AI."
   >
 
-  <title>LocalBoost AI | Practical Marketing Plans for Local Businesses</title>
+  <meta name="theme-color" content="#182b6b">
 
-  <!-- Bootstrap Icons -->
+  <title>LocalBoost AI | Local Marketing, Made Easier to Plan</title>
+
+  <!-- Bootstrap grid and Bootstrap Icons -->
   <link
     rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.2/font/bootstrap-icons.min.css"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css"
   >
 
   <link rel="stylesheet" href="style.css">
-
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* Icon alignment */
-    .button,
-    .nav-cta,
-    .menu-button,
-    .lb-chat-form button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .bi {
-      line-height: 1;
-    }
-
-    /* Buttons */
-    .button {
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-    .button:hover {
-      transform: translateY(-2px) scale(1.02);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
-    }
-
-    .button:active {
-      transform: translateY(1px) scale(0.98);
-    }
-
-    .button .bi {
-      transition: transform 0.25s ease;
-    }
-
-    .button:hover .bi {
-      transform: translateX(3px);
-    }
-
-    .lb-ripple {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.55);
-      transform: scale(0);
-      animation: lbRipple 0.6s linear;
-      pointer-events: none;
-    }
-
-    @keyframes lbRipple {
-      to {
-        transform: scale(4);
-        opacity: 0;
-      }
-    }
-
-    /* Image cards */
-    .lb-trust-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-      gap: 22px;
-      margin-top: 32px;
-    }
-
-    .lb-image-card {
-      background: #fff;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.10);
-      transition: transform 0.35s ease, box-shadow 0.35s ease;
-    }
-
-    .lb-image-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 22px 48px rgba(0, 0, 0, 0.18);
-    }
-
-    .lb-card-image {
-      position: relative;
-      height: 200px;
-      overflow: hidden;
-    }
-
-    .lb-card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .lb-image-card:hover .lb-card-image img {
-      transform: scale(1.08);
-    }
-
-    .lb-card-logo {
-      position: absolute;
-      top: 14px;
-      left: 14px;
-      width: 44px;
-      height: 44px;
-      display: grid;
-      place-items: center;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.94);
-      color: #6d28d9;
-      font-size: 1.25rem;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
-    }
-
-    .lb-card-body {
-      padding: 22px;
-    }
-
-    .lb-card-body h3 {
-      margin: 0 0 8px;
-      font-size: 1.15rem;
-    }
-
-    .lb-card-body p {
-      margin: 0;
-      color: #555;
-      line-height: 1.6;
-    }
-
-    /* Image slider */
-    .lb-slider {
-      position: relative;
-      overflow: hidden;
-      border-radius: 24px;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.16);
-      margin-top: 32px;
-    }
-
-    .lb-slider-track {
-      display: flex;
-      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .lb-slide-card {
-      min-width: 100%;
-      position: relative;
-    }
-
-    .lb-slide-card img {
-      width: 100%;
-      height: 440px;
-      object-fit: cover;
-    }
-
-    .lb-slide-overlay {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 32px;
-      color: #fff;
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.85),
-        rgba(0, 0, 0, 0.25) 65%,
-        transparent
-      );
-    }
-
-    .lb-slide-overlay h3 {
-      margin: 8px 0;
-      font-size: clamp(1.3rem, 3vw, 1.8rem);
-    }
-
-    .lb-slide-overlay p {
-      margin: 0;
-      max-width: 640px;
-      line-height: 1.6;
-    }
-
-    .lb-slider-controls {
-      position: absolute;
-      right: 18px;
-      bottom: 18px;
-      display: flex;
-      gap: 10px;
-    }
-
-    .lb-slider-controls button {
-      width: 48px;
-      height: 48px;
-      border: none;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.94);
-      color: #111;
-      font-size: 1.15rem;
-      cursor: pointer;
-      transition: transform 0.25s ease;
-    }
-
-    .lb-slider-controls button:hover {
-      transform: scale(1.1);
-    }
-
-    .lb-slider-controls button:active {
-      transform: scale(0.92);
-    }
-
-    /* Gym banner */
-    .lb-gym-banner {
-      position: relative;
-      min-height: 440px;
-      border-radius: 26px;
-      overflow: hidden;
-      display: grid;
-      align-items: center;
-    }
-
-    .lb-gym-banner img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      animation: lbGymZoom 14s ease-in-out infinite alternate;
-    }
-
-    @keyframes lbGymZoom {
-      from {
-        transform: scale(1.05);
-      }
-      to {
-        transform: scale(1.18);
-      }
-    }
-
-    .lb-gym-overlay {
-      position: relative;
-      z-index: 2;
-      padding: 55px 35px;
-      color: #fff;
-      background: linear-gradient(
-        100deg,
-        rgba(8, 8, 18, 0.9),
-        rgba(8, 8, 18, 0.45)
-      );
-    }
-
-    .lb-gym-overlay h2 {
-      font-size: clamp(1.7rem, 4vw, 2.5rem);
-      margin: 12px 0;
-    }
-
-    .lb-gym-overlay p {
-      max-width: 640px;
-      line-height: 1.65;
-    }
-
-    /* Final CTA */
-    .lb-final-cta {
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 35px;
-      align-items: center;
-      background: linear-gradient(135deg, #f8f5ff, #eef4ff);
-      border-radius: 28px;
-      padding: 45px;
-      overflow: hidden;
-    }
-
-    .lb-final-cta-image {
-      border-radius: 22px;
-      overflow: hidden;
-      box-shadow: 0 22px 48px rgba(0, 0, 0, 0.16);
-      animation: lbFloat 5s ease-in-out infinite;
-    }
-
-    .lb-final-cta-image img {
-      width: 100%;
-      height: 100%;
-      min-height: 330px;
-      object-fit: cover;
-    }
-
-    @keyframes lbFloat {
-      0%,
-      100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-12px);
-      }
-    }
-
-    /* Mobile responsive */
-    @media (max-width: 900px) {
-      .lb-final-cta {
-        grid-template-columns: 1fr;
-        padding: 28px;
-      }
-
-      .lb-slide-card img {
-        height: 330px;
-      }
-
-      .lb-gym-banner {
-        min-height: 380px;
-      }
-
-      .lb-gym-overlay {
-        padding: 35px 22px;
-      }
-
-      .lb-slide-overlay {
-        padding: 22px;
-      }
-
-      .lb-slider-controls {
-        right: 12px;
-        bottom: 12px;
-      }
-
-      .lb-slider-controls button {
-        width: 42px;
-        height: 42px;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .lb-card-image {
-        height: 170px;
-      }
-
-      .lb-slide-card img {
-        height: 280px;
-      }
-
-      .lb-final-cta-image img {
-        min-height: 240px;
-      }
-    }
-  </style>
 </head>
 
 <body>
   <!-- NAVIGATION -->
   <header class="navbar">
-    <a href="index.html" class="logo" aria-label="LocalBoost AI Home">
-      <i class="bi bi-rocket-takeoff"></i>
-      LocalBoost AI
-    </a>
+   <a href="index.html" class="site-brand" aria-label="LocalBoost AI Home">
+  <span class="site-brand-mark" aria-hidden="true">LB</span>
+
+  <span class="site-brand-text">
+    <span class="site-brand-name">LocalBoost</span>
+    <span class="site-brand-ai">AI</span>
+  </span>
+</a>
 
     <nav class="nav-links" aria-label="Main navigation">
-      <a class="active" href="index.html">
-        <i class="bi bi-house-door"></i>
-        Home
-      </a>
-
-      <a href="how-it-works.html">
-        <i class="bi bi-diagram-3"></i>
-        How it works
-      </a>
-
-      <a href="features.html">
-        <i class="bi bi-stars"></i>
-        Features
-      </a>
-
-      <a href="pricing.html">
-        <i class="bi bi-tags"></i>
-        Pricing
-      </a>
-
-      <a href="gym-growth-plan.html">
-        <i class="bi bi-heart-pulse"></i>
-        Gym Plan
-      </a>
-
-      <a href="generator.html" class="nav-cta">
-        <i class="bi bi-magic"></i>
-        Get my plan
-      </a>
+      <a class="active" href="index.html" aria-current="page">Home</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="features.html">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="gym-growth-plan.html">Gym Plan</a>
+      <a href="generator.html" class="nav-cta">Get my plan</a>
     </nav>
 
     <button
@@ -414,45 +54,67 @@
       aria-label="Open navigation menu"
       aria-expanded="false"
     >
-      <i class="bi bi-list"></i>
+      ☰
     </button>
   </header>
+  <div
+  class="welcome-marquee"
+  aria-label="Jai Shree Khatu Shyam, Radhe Radhe, Shubham Jaiswal, My Projects"
+>
+  <div class="welcome-marquee-track" aria-hidden="true">
+    <span>🙏 जय श्री खाटू श्याम 🙏</span>
+    <span class="marquee-dot">✦</span>
+    <span>🌸 Radhe Radhe 🌸</span>
+    <span class="marquee-dot">✦</span>
+    <span>👋 Shubham Jaiswal</span>
+    <span class="marquee-dot">✦</span>
+    <span>💻 My Projects</span>
+    <span class="marquee-dot">✦</span>
+
+    <span>🙏 जय श्री खाटू श्याम 🙏</span>
+    <span class="marquee-dot">✦</span>
+    <span>🌸 Radhe Radhe 🌸</span>
+    <span class="marquee-dot">✦</span>
+    <span>👋 Shubham Jaiswal</span>
+    <span class="marquee-dot">✦</span>
+    <span>💻 My Projects</span>
+    <span class="marquee-dot">✦</span>
+  </div>
+</div>
 
   <main>
     <!-- HERO -->
-    <section class="hero hero-animated-bg">
+    <section class="hero hero-animated-bg" aria-labelledby="home-title">
       <div class="hero-content reveal reveal-left">
-        <p class="eyebrow">
-          <i class="bi bi-bullseye"></i>
-          Practical marketing support for local businesses
-        </p>
+        <p class="eyebrow">Local marketing, made easier to plan</p>
 
-        <h1>
-          A custom 30-day marketing plan
-          <span id="typewriterText">built around your business.</span>
+        <h1 id="home-title">
+          Make your next 30 days of marketing clearer
+          <span id="typewriterText">one practical step at a time.</span>
         </h1>
 
         <p class="hero-text">
-          Tell us about your business, city, target customers and current offer.
-          We prepare practical content ideas, captions, phone-friendly Reel scripts,
-          local offer concepts and WhatsApp campaign drafts.
+          Share your business, city, customers and goals to request practical
+          content ideas, captions, phone-friendly Reel scripts and promotion
+          concepts you can review and adapt.
         </p>
 
         <div class="hero-buttons">
           <a href="generator.html" class="button button-primary">
-            <i class="bi bi-magic"></i>
-            Request my custom plan
+            Tell us about your business →
           </a>
 
           <a href="#sample-preview" class="button button-secondary">
-            <i class="bi bi-eye"></i>
-            See a sample plan
+            Explore the sample
           </a>
         </div>
 
         <p class="trust-text">
-          <i class="bi bi-shield-check"></i>
-          Clear request process • Hindi, English and Hinglish support
+          For local businesses • Hindi, English and Hinglish
+        </p>
+
+        <p class="trust-text">
+          Demo notice: submitting a request does not generate an instant plan.
         </p>
       </div>
 
@@ -460,44 +122,29 @@
       <div
         class="dashboard sample-dashboard reveal reveal-right"
         id="sample-preview"
-        aria-label="Example marketing plan preview"
+        aria-label="Illustrative local-business marketing plan preview"
       >
         <div class="dashboard-top">
           <div>
-            <p class="small-label">
-              <i class="bi bi-layout-text-window-reverse"></i>
-              Sample output preview
-            </p>
-
+            <p class="small-label">Illustrative example · Not a customer result</p>
             <h2>Glow &amp; Go Salon</h2>
-
-            <p class="muted">
-              <i class="bi bi-geo-alt"></i>
-              Vijay Nagar, Indore · Example only
-            </p>
+            <p class="muted">Vijay Nagar, Indore · Example only</p>
           </div>
 
-          <span class="sample-badge">
-            <i class="bi bi-patch-check"></i>
-            Sample
-          </span>
+          <span class="sample-badge">Sample</span>
         </div>
 
         <div class="plan-card sample-plan-card">
-          <p class="small-label">
-            <i class="bi bi-calendar-day"></i>
-            Day 1 · Instagram Reel
-          </p>
-
+          <p class="small-label">Day 1 · Instagram Reel</p>
           <h3>Hair-care Reel script</h3>
 
           <p class="muted">
-            <strong><i class="bi bi-lightning-charge"></i> Hook:</strong>
+            <strong>Hook:</strong>
             “Does your hair colour lose its glow too quickly?”
           </p>
 
           <p class="muted">
-            <strong><i class="bi bi-lightbulb"></i> Content idea:</strong>
+            <strong>Content idea:</strong>
             Show one simple hair-care tip for local weather, followed by a clear
             booking call-to-action.
           </p>
@@ -505,15 +152,8 @@
 
         <div class="post-card sample-post-card">
           <div class="post-header">
-            <span class="small-label">
-              <i class="bi bi-whatsapp"></i>
-              WhatsApp campaign draft
-            </span>
-
-            <span class="content-type">
-              <i class="bi bi-lock"></i>
-              Opt-in only
-            </span>
+            <span class="small-label">WhatsApp campaign draft</span>
+            <span class="content-type">Opt-in only</span>
           </div>
 
           <p class="muted">
@@ -524,652 +164,349 @@
 
         <div class="stats">
           <div class="stat">
-            <strong><i class="bi bi-calendar3"></i> 30</strong>
-            <span>Content ideas</span>
+            <strong>Plan</strong>
+            <span>Content direction</span>
           </div>
 
           <div class="stat">
-            <strong><i class="bi bi-play-circle"></i> 8</strong>
-            <span>Reel scripts</span>
+            <strong>Reels</strong>
+            <span>Script starters</span>
           </div>
 
           <div class="stat">
-            <strong><i class="bi bi-chat-dots"></i> 4</strong>
-            <span>WhatsApp drafts</span>
+            <strong>Drafts</strong>
+            <span>Opt-in messages</span>
           </div>
 
           <div class="stat">
-            <strong><i class="bi bi-file-earmark-text"></i> 1</strong>
-            <span>Custom plan</span>
+            <strong>Review</strong>
+            <span>Check every detail</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TRUST IMAGE CARDS -->
-    <section class="section reveal">
-      <div class="section-heading">
-        <p class="eyebrow">
-          <i class="bi bi-patch-check"></i>
-          Why LocalBoost AI
-        </p>
+    <!-- TRUST STRIP -->
+   <!-- Why LocalBoost -->
+<section class="why-localboost" aria-label="Why choose LocalBoost AI">
+  <article class="why-card">
+    <span class="why-icon" aria-hidden="true">📍</span>
+    <div>
+      <h2>Made for local businesses</h2>
+      <p>Salon, café, gym, boutique, coaching and service businesses.</p>
+    </div>
+  </article>
 
-        <h2>Made for local businesses</h2>
+  <article class="why-card">
+    <span class="why-icon" aria-hidden="true">💬</span>
+    <div>
+      <h2>Simple language</h2>
+      <p>Clear content in Hinglish, Hindi or English.</p>
+    </div>
+  </article>
 
-        <p>
-          Simple, practical aur clear marketing support—jo aap turant use kar sakein.
-        </p>
-      </div>
-
-      <div class="lb-trust-grid">
-        <article class="lb-image-card">
-          <div class="lb-card-image">
-            <img
-              src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/71f2ec54-e7e5-50b7-9859-54ec8a6276c5/b348fcb9-a526-5b78-9a99-5a9ae16753d6.jpg"
-              alt="Modern beauty salon interior"
-              loading="lazy"
-            >
-
-            <span class="lb-card-logo">
-              <i class="bi bi-scissors"></i>
-            </span>
-          </div>
-
-          <div class="lb-card-body">
-            <h3>Made for local businesses</h3>
-
-            <p>
-              Salon, café, gym, boutique, coaching and service businesses ke liye
-              practical marketing ideas.
-            </p>
-          </div>
-        </article>
-
-        <article class="lb-image-card">
-          <div class="lb-card-image">
-            <img
-              src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/d0e42ec7-c513-5760-9e44-1e16e41392ca/b348fcb9-a526-5b78-9a99-5a9ae16753d6.jpg"
-              alt="Modern cafe interior"
-              loading="lazy"
-            >
-
-            <span class="lb-card-logo">
-              <i class="bi bi-translate"></i>
-            </span>
-          </div>
-
-          <div class="lb-card-body">
-            <h3>Simple language</h3>
-
-            <p>
-              Clear content in Hinglish, Hindi or English—easy to understand and easy to post.
-            </p>
-          </div>
-        </article>
-
-        <article class="lb-image-card">
-          <div class="lb-card-image">
-            <img
-              src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/026a36c5-5ca4-50d9-ad9e-71fab3e507ba/33078449-c738-55ce-a715-b503ec83d582.jpg"
-              alt="Social media content calendar"
-              loading="lazy"
-            >
-
-            <span class="lb-card-logo">
-              <i class="bi bi-check2-circle"></i>
-            </span>
-          </div>
-
-          <div class="lb-card-body">
-            <h3>Practical output</h3>
-
-            <p>
-              Ideas designed to be reviewed, edited and posted for your real business.
-            </p>
-          </div>
-        </article>
-      </div>
-    </section>
+  <article class="why-card">
+    <span class="why-icon" aria-hidden="true">✍️</span>
+    <div>
+      <h2>Practical output</h2>
+      <p>Ideas designed to be reviewed, edited and posted.</p>
+    </div>
+  </article>
+</section>
 
     <!-- THREE STEP PROCESS -->
     <section class="process-section">
       <div class="section-heading reveal">
-        <p class="eyebrow">
-          <i class="bi bi-signpost-split"></i>
-          Clear process
-        </p>
-
+        <p class="eyebrow">Clear process</p>
         <h2>Your plan in 3 simple steps</h2>
-
-        <p>
-          You know exactly what happens after you send your plan request.
-        </p>
+        <p>You know what happens after you send your plan request.</p>
       </div>
 
       <div class="process-grid stagger-parent">
         <article class="process-card reveal">
           <span class="process-number">01</span>
-
-          <div class="icon">
-            <i class="bi bi-clipboard-data"></i>
-          </div>
-
+          <div class="icon">✦</div>
           <h3>Share business details</h3>
-
           <p>
-            Add your business category, city, audience, services, offer and marketing goal.
+            Share your business category, city, services and marketing goal.
           </p>
         </article>
 
         <article class="process-card reveal">
           <span class="process-number">02</span>
-
-          <div class="icon">
-            <i class="bi bi-lightbulb"></i>
-          </div>
-
-          <h3>Get a tailored direction</h3>
-
+          <div class="icon">⌁</div>
+          <h3>Request a tailored plan</h3>
           <p>
-            We structure useful content themes, captions, Reels, local offers and clear CTAs.
+            Send your details for review. This demo does not instantly generate
+            or deliver a marketing plan.
           </p>
         </article>
 
         <article class="process-card reveal">
           <span class="process-number">03</span>
-
-          <div class="icon">
-            <i class="bi bi-check2-circle"></i>
-          </div>
-
+          <div class="icon">✓</div>
           <h3>Review and use it</h3>
-
           <p>
-            Receive your plan, check every offer and claim, then adapt it for your real business.
+            Check every offer and claim, then adapt any ideas for your real business.
           </p>
         </article>
       </div>
     </section>
 
-<!-- IMAGE SLIDER -->
-<section class="section reveal">
-  <div class="section-heading">
-    <p class="eyebrow">
-      <i class="bi bi-box-seam"></i>
-      What LocalBoost delivers
-    </p>
-
-    <h2>One business brief. A clear marketing direction.</h2>
-
+    <!-- Local business examples -->
+<section class="business-showcase" aria-labelledby="business-showcase-title">
+  <div class="business-showcase-heading">
+    <p class="eyebrow">For local businesses</p>
+    <h2 id="business-showcase-title">
+      Practical ideas for the business you run
+    </h2>
     <p>
-      Simple, readable and practical content guidance for busy local-business owners.
+      Explore example marketing ideas for gyms, beauty parlours and cafés.
+      These are illustrative examples, not customer results.
     </p>
   </div>
 
-  <div class="lb-slider" id="lbSlider">
-    <div class="lb-slider-track" id="lbSliderTrack">
-
-      <!-- SLIDE 1: GYM -->
-      <article class="lb-slide-card">
+  <div class="business-showcase-grid">
+    <!-- Gym card -->
+    <article class="business-card">
+      <div class="business-card-image">
         <img
-          src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/f13f71b2-b4fd-5e73-828a-8e79d9308da3/ff65e6a8-7fa7-5800-a68d-40c87b06ce82.jpg"
-          alt="Modern gym interior with fitness equipment"
+          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=900&q=85"
+          alt="Gym interior with fitness equipment"
           loading="lazy"
+          width="900"
+          height="650"
         >
+        <span class="business-card-tag">GYM &amp; FITNESS</span>
+      </div>
 
-        <div class="lb-slide-overlay">
-          <span class="slide-label">01 / 03</span>
+      <div class="business-card-content">
+        <p class="business-card-kicker">Training • Community • Membership</p>
+        <h3>Help more people discover your gym</h3>
+        <p>
+          Share beginner-friendly workout tips, trainer introductions and
+          member stories—with permission.
+        </p>
+        <a href="gym-growth-plan.html">
+          Explore Gym Growth Plan <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
 
-          <h3>
-            <i class="bi bi-heart-pulse"></i>
-            Gym growth plan &amp; local leads
-          </h3>
-
-          <p>
-            Gym Reels, membership offers, local visibility actions and
-            member-retention ideas for consistent gym growth.
-          </p>
-
-          <a href="gym-growth-plan.html" class="button button-primary">
-            <i class="bi bi-graph-up-arrow"></i>
-            View Gym Growth Plan
-          </a>
-        </div>
-      </article>
-
-      <!-- SLIDE 2: BEAUTY PARLOUR -->
-      <article class="lb-slide-card">
+    <!-- Beauty parlour card -->
+    <article class="business-card">
+      <div class="business-card-image">
         <img
-          src="https://st.perplexity.ai/estatic/0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6e829ca226f367e4195c12a62f4410b29e7736377ae7a83f7f58f02ab38cdc6df5850991b18fd0d9cb90182a0fe52a8be84c798bbb98da66e7bfa9f78eda17d442"
-          alt="Makeup artist giving bridal makeup in a beauty parlour"
+          src="https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&q=85"
+          alt="Bright, modern beauty salon interior"
           loading="lazy"
+          width="900"
+          height="650"
         >
+        <span class="business-card-tag">BEAUTY PARLOUR</span>
+      </div>
 
-        <div class="lb-slide-overlay">
-          <span class="slide-label">02 / 03</span>
+      <div class="business-card-content">
+        <p class="business-card-kicker">Services • Tips • Bookings</p>
+        <h3>Show the care behind your services</h3>
+        <p>
+          Create service explainers, hair-care tips and appointment reminders.
+          Confirm prices and offers before posting.
+        </p>
+        <a href="generator.html?category=salon">
+          Request a marketing plan <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
 
-          <h3>
-            <i class="bi bi-camera-reels"></i>
-            Beauty parlour Reels &amp; booking posts
-          </h3>
-
-          <p>
-            Attractive Reel hooks, before-after content ideas, service highlights
-            and clear booking calls to action for salons and beauty parlours.
-          </p>
-
-          <a href="generator.html" class="button button-primary">
-            <i class="bi bi-magic"></i>
-            Create salon plan
-          </a>
-        </div>
-      </article>
-
-      <!-- SLIDE 3: LOCALBOOST AI -->
-      <article class="lb-slide-card">
+    <!-- Café card -->
+    <article class="business-card">
+      <div class="business-card-image">
         <img
-          src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/3b7d6ef9-be97-5256-a88a-391f8b0ed046/10f1907b-2567-564d-b1ad-0ade96af1083.jpg"
-          alt="Person using laptop with digital marketing and social media icons"
+          src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=900&q=85"
+          alt="Warm and welcoming café interior"
           loading="lazy"
+          width="900"
+          height="650"
         >
+        <span class="business-card-tag">CAFÉ &amp; RESTAURANT</span>
+      </div>
 
-        <div class="lb-slide-overlay">
-          <span class="slide-label">LocalBoost AI</span>
-
-          <h3>
-            <i class="bi bi-stars"></i>
-            LocalBoost AI se smart local marketing
-          </h3>
-
-          <p>
-            Apne business details share karein aur paayein practical content calendar,
-            captions, Reel scripts, offer ideas aur WhatsApp campaign drafts.
-          </p>
-
-          <a href="generator.html" class="button button-primary">
-            <i class="bi bi-magic"></i>
-            Request my custom plan
-          </a>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="lb-slider-controls">
-      <button id="lbPrevSlide" type="button" aria-label="Previous slide">
-        <i class="bi bi-arrow-left"></i>
-      </button>
-
-      <button id="lbNextSlide" type="button" aria-label="Next slide">
-        <i class="bi bi-arrow-right"></i>
-      </button>
-    </div>
+      <div class="business-card-content">
+        <p class="business-card-kicker">Menu • Moments • Local offers</p>
+        <h3>Make your café part of the neighbourhood</h3>
+        <p>
+          Share a menu highlight, behind-the-scenes moments and clear local
+          updates your customers can use.
+        </p>
+        <a href="generator.html?category=restaurant">
+          Request a marketing plan <span aria-hidden="true">→</span>
+        </a>
+      </div>
+    </article>
   </div>
 </section>
 
     <!-- FEATURES -->
     <section class="section">
       <div class="section-heading reveal">
-        <p class="eyebrow">
-          <i class="bi bi-graph-up-arrow"></i>
-          Built for local growth
-        </p>
-
+        <p class="eyebrow">Built for local growth</p>
         <h2>What your plan can include</h2>
-
-        <p>
-          Clear, editable marketing ideas—not confusing theory or false promises.
-        </p>
+        <p>Clear, editable marketing ideas—not confusing theory or false promises.</p>
       </div>
 
       <div class="four-column stagger-parent">
         <article class="feature-card reveal">
-          <div class="icon">
-            <i class="bi bi-calendar3"></i>
-          </div>
-
-          <h3>Content calendar</h3>
-
+          <div class="icon">▦</div>
+          <h3>Content calendar ideas</h3>
           <p>
             A mix of offers, tips, trust-building posts, community content and engagement ideas.
           </p>
         </article>
 
         <article class="feature-card reveal">
-          <div class="icon">
-            <i class="bi bi-chat-left-text"></i>
-          </div>
-
+          <div class="icon">Aa</div>
           <h3>Captions and CTAs</h3>
-
           <p>
-            Easy captions with local angles and calls to action based on your business goal.
+            Caption ideas with local angles and calls to action based on your business goal.
           </p>
         </article>
 
         <article class="feature-card reveal">
-          <div class="icon">
-            <i class="bi bi-play-circle"></i>
-          </div>
-
+          <div class="icon">▶</div>
           <h3>Reel scripts</h3>
-
           <p>
             Scene-by-scene Reel ideas made for real staff, real services and a simple phone camera.
           </p>
         </article>
 
         <article class="feature-card reveal">
-          <div class="icon">
-            <i class="bi bi-percent"></i>
-          </div>
-
+          <div class="icon">%</div>
           <h3>Offer ideas</h3>
-
           <p>
-            Practical ideas for trials, referrals, slow days, repeat customers and local occasions.
+            Ideas for trials, referrals, slow days, repeat customers and local occasions.
           </p>
         </article>
       </div>
     </section>
 
-    <!-- GYM BANNER -->
-    <section class="section reveal">
-      <div class="lb-gym-banner">
-        <img
-          src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/1458694e-fe25-5651-bb32-602271c1f3cc/a1ae5bb0-9c73-5189-9e36-292bdc04a608.jpg"
-          alt="Person training with dumbbells in a gym"
-          loading="lazy"
-        >
+   <!-- Gym Growth Plan CTA -->
+<section class="gym-promo" aria-labelledby="gym-promo-title">
+  <div class="gym-promo-copy">
+    <span class="gym-promo-label">
+      <i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>
+      FOR GYM OWNERS
+    </span>
 
-        <div class="lb-gym-overlay">
-          <p class="eyebrow">
-            <i class="bi bi-heart-pulse"></i>
-            For gym owners
-          </p>
+    <h2 id="gym-promo-title">
+      Ready to grow your gym’s local presence?
+    </h2>
 
-          <h2>Need local lead ideas, gym Reels and member-retention actions?</h2>
+    <p>
+      Explore practical gym Reel hooks, local marketing ideas,
+      membership-offer concepts and member-engagement actions.
+    </p>
 
-          <p>
-            Explore the Gym Growth Plan preview with Reel hooks, local visibility actions,
-            membership-offer concepts and member-engagement ideas.
-          </p>
+    <a class="gym-promo-button" href="gym-growth-plan.html">
+      Explore the Gym Growth Plan
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
 
-          <a href="gym-growth-plan.html" class="button button-primary">
-            <i class="bi bi-graph-up-arrow"></i>
-            View Gym Growth Plan
-          </a>
-        </div>
-      </div>
-    </section>
+  <div class="gym-promo-visual">
+    <img
+      class="gym-promo-photo"
+      src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=80"
+      alt="Fitness equipment inside a gym"
+      loading="lazy"
+      width="700"
+      height="460"
+    >
 
-    <!-- FINAL CTA -->
-    <section class="section">
-      <div class="lb-final-cta reveal">
-        <div>
-          <p class="eyebrow">
-            <i class="bi bi-rocket-takeoff"></i>
-            Get started
-          </p>
+    <span class="gym-promo-icon" aria-hidden="true">
+      <i class="bi bi-barbell"></i>
+    </span>
 
-          <h2>Make your local marketing more consistent.</h2>
+    <span class="gym-promo-pointer" aria-hidden="true">👉</span>
 
-          <p>
-            Submit your business details and request a custom 30-day marketing plan.
-            Get practical content ideas, Reel scripts and local promotion direction.
-          </p>
+    <span class="gym-promo-note">
+      See the gym plan
+    </span>
+  </div>
+</section>
 
-          <a href="generator.html" class="button button-primary">
-            <i class="bi bi-magic"></i>
-            Request my custom plan
-          </a>
-
-          <small>
-            This is a plan request. Results depend on your business, local market,
-            offer and execution.
-          </small>
-        </div>
-
-        <div class="lb-final-cta-image">
-          <img
-            src="https://d2u1z1lopyfwlx.cloudfront.net/thumbnails/8052235d-c6c3-5dbd-86a3-0e1e9f0d485e/cda58ce7-8382-554b-9962-c278eb4394c6.jpg"
-            alt="Business owners discussing marketing plan"
-            loading="lazy"
-          >
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
+    <!-- FAQ SECTION -->
     <section class="section faq-section" id="faq">
       <div class="section-heading">
-        <p class="eyebrow">
-          <i class="bi bi-question-circle"></i>
-          FAQs
-        </p>
-
-        <h2>LocalBoost AI ke baare mein sawal</h2>
-
-        <p>
-          Hamari service, content aur plan request ke baare mein aam sawalon ke jawab.
-        </p>
+        <p class="eyebrow">FAQs</p>
+        <h2>Questions about LocalBoost AI</h2>
+        <p>Answers to common questions about the service and plan request.</p>
       </div>
 
       <div class="faq-list">
         <details class="faq-item">
-          <summary>
-            <i class="bi bi-patch-check"></i>
-            Kya content bilkul ready-to-post hota hai?
-          </summary>
-
+          <summary>Is the content completely ready to post?</summary>
           <div class="faq-answer">
             <p>
-              Aapko copy-paste ke liye tayyar captions, Reel scripts aur content
-              ideas mil sakte hain. Post karne se pehle apne business ka naam,
-              offer, price, dates aur contact details zaroor check karein.
+              You may receive captions, Reel scripts and content ideas that
+              you can adapt. Before posting, check your business name, offer,
+              prices, dates and contact details.
             </p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary>
-            <i class="bi bi-translate"></i>
-            Kya Hindi ya Hinglish captions milenge?
-          </summary>
-
+          <summary>Can I get Hindi or Hinglish captions?</summary>
           <div class="faq-answer">
             <p>
-              Haan. Plan request form mein aap Hindi, Hinglish ya English select
-              kar sakte hain. Content aapki local audience aur business ke hisaab
-              se tayyar kiya jayega.
+              Yes. Select Hindi, Hinglish or English in the plan request form.
+              The requested language and your business details help guide the content.
             </p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary>
-            <i class="bi bi-credit-card"></i>
-            Payment kaise karni hogi?
-          </summary>
-
+          <summary>How does payment work?</summary>
           <div class="faq-answer">
             <p>
-              Abhi website online payment collect nahi karti. Plan request bhejne
-              se payment nahi hoti. Agar kisi paid service ka offer available hua,
-              toh payment method aur amount pehle clearly confirm kiye jayenge.
+              This website does not currently collect online payments.
+              Submitting a plan request does not charge you. Any paid offer,
+              amount and payment method will be confirmed clearly beforehand.
             </p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary>
-            <i class="bi bi-cpu"></i>
-            Kya form submit karte hi AI plan mil jayega?
-          </summary>
-
+          <summary>Will a plan be generated as soon as I submit?</summary>
           <div class="faq-answer">
             <p>
-              Nahi. Abhi request submit hone ke baad details review ki jaati hain;
-              plan automatically generate nahi hota. Form submit karne par aapko
-              confirmation page dikhai dega.
+              No. This demo does not automatically generate a plan. Submitted
+              requests are reviewed, and the confirmation page confirms receipt.
             </p>
           </div>
         </details>
 
         <details class="faq-item">
-          <summary>
-            <i class="bi bi-send"></i>
-            Plan request kaise bhejun?
-          </summary>
-
+          <summary>How do I request a plan?</summary>
           <div class="faq-answer">
             <p>
-              “Free plan banayein” button par click karke form ke steps poore
-              karein. Business details, marketing goal aur contact email bharne
-              ke baad request submit karein.
+              Click “Get my plan”, complete the form steps, and submit your
+              business details, marketing goal and contact email.
             </p>
           </div>
         </details>
       </div>
 
       <div class="faq-cta">
-        <a href="generator.html" class="button button-primary">
-          <i class="bi bi-send"></i>
-          Free plan request karein
-        </a>
+        <a href="generator.html" class="button button-primary">Request a plan</a>
       </div>
     </section>
   </main>
 
+  <!-- Footer and chatbot are loaded from shared components. -->
+  <div id="sharedFooter"></div>
+  <div id="sharedChatbot"></div>
 
-  <!-- CHATBOT -->
-  <div class="lb-chatbot" id="lbChatbot">
-    <button
-      class="lb-chat-launcher"
-      id="lbChatLauncher"
-      type="button"
-      aria-label="Open LocalBoost AI Assistant"
-      aria-expanded="false"
-    >
-      <span class="lb-chat-icon">
-        <i class="bi bi-stars"></i>
-      </span>
-
-      <span class="lb-chat-pulse"></span>
-    </button>
-
-    <section
-      class="lb-chat-window"
-      id="lbChatWindow"
-      aria-label="LocalBoost AI Assistant"
-      aria-hidden="true"
-    >
-      <header class="lb-chat-header">
-        <div class="lb-chat-avatar">LB</div>
-
-        <div class="lb-chat-heading">
-          <strong>LocalBoost Assistant</strong>
-
-          <span>
-            <i class="bi bi-broadcast"></i>
-            Online • Local business help
-          </span>
-        </div>
-
-        <button
-          class="lb-chat-close"
-          id="lbChatClose"
-          type="button"
-          aria-label="Close chat"
-        >
-          <i class="bi bi-x-lg"></i>
-        </button>
-      </header>
-
-      <div class="lb-chat-body" id="lbChatBody"></div>
-
-      <div class="lb-chat-quick-actions" id="lbChatQuickActions">
-        <button type="button" data-question="What does LocalBoost AI do?">
-          <i class="bi bi-info-circle"></i>
-          What does LocalBoost do?
-        </button>
-
-        <button type="button" data-question="I need a gym marketing plan">
-          <i class="bi bi-heart-pulse"></i>
-          Gym marketing plan
-        </button>
-
-        <button type="button" data-question="How much does it cost?">
-          <i class="bi bi-tags"></i>
-          Pricing
-        </button>
-
-        <button type="button" data-question="I want a free custom plan">
-          <i class="bi bi-magic"></i>
-          Free custom plan
-        </button>
-      </div>
-
-      <form class="lb-chat-form" id="lbChatForm">
-        <input
-          id="lbChatInput"
-          type="text"
-          placeholder="Ask about marketing, gym plan or pricing..."
-          autocomplete="off"
-          maxlength="300"
-          aria-label="Type your message"
-        >
-
-        <button type="submit" aria-label="Send message">
-          <i class="bi bi-send-fill"></i>
-        </button>
-      </form>
-
-      <p class="lb-chat-disclaimer">
-        General guidance only. Verify all offers, prices and claims before using them.
-      </p>
-    </section>
-  </div>
-
-  <script src="script.js"></script>
-
-  <script>
-    // Button ripple
-    document.querySelectorAll(".button").forEach((button) => {
-      button.addEventListener("click", function (event) {
-        const ripple = document.createElement("span");
-        const rect = button.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-
-        ripple.style.width = ripple.style.height = `${size}px`;
-        ripple.style.left = `${event.clientX - rect.left - size / 2}px`;
-        ripple.style.top = `${event.clientY - rect.top - size / 2}px`;
-        ripple.classList.add("lb-ripple");
-
-        button.appendChild(ripple);
-        setTimeout(() => ripple.remove(), 600);
-      });
-    });
-
-    // Image slider
-    const lbTrack = document.getElementById("lbSliderTrack");
-    const lbPrev = document.getElementById("lbPrevSlide");
-    const lbNext = document.getElementById("lbNextSlide");
-
-    if (lbTrack && lbPrev && lbNext) {
-      let lbCurrent = 0;
-      const lbTotal = lbTrack.children.length;
-
-      function lbGoTo(index) {
-        lbCurrent = (index + lbTotal) % lbTotal;
-        lbTrack.style.transform = `translateX(-${lbCurrent * 100}%)`;
-      }
-
-      lbPrev.addEventListener("click", () => lbGoTo(lbCurrent - 1));
-      lbNext.addEventListener("click", () => lbGoTo(lbCurrent + 1));
-
-      setInterval(() => lbGoTo(lbCurrent + 1), 6000);
-    }
-  </script>
+  <script src="shared-layout.js"></script>
 </body>
 </html>

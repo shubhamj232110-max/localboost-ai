@@ -3,40 +3,32 @@
     class="lb-chat-launcher"
     id="lbChatLauncher"
     type="button"
-    aria-label="LocalBoost AI chat kholen"
+    aria-label="Open LocalBoost AI chat"
     aria-expanded="false"
-    aria-controls="lbChatWindow"
   >
-    <span class="lb-chat-icon" aria-hidden="true">✦</span>
-    <span class="lb-chat-pulse" aria-hidden="true"></span>
+    <span class="lb-chat-icon">✦</span>
+    <span class="lb-chat-pulse"></span>
   </button>
 
   <section
     class="lb-chat-window"
     id="lbChatWindow"
-    role="dialog"
-    aria-labelledby="lbChatTitle"
+    aria-label="LocalBoost AI chat"
     aria-hidden="true"
-    tabindex="-1"
   >
     <header class="lb-chat-header">
-      <div class="lb-chat-avatar" aria-hidden="true">LB</div>
+      <div class="lb-chat-avatar">LB</div>
 
       <div class="lb-chat-heading">
-        <strong id="lbChatTitle">LocalBoost AI</strong>
-        <span class="lb-chat-status-line">
-          <i class="lb-chat-status-dot" aria-hidden="true"></i>
-          <span id="lbChatStatus" role="status" aria-live="polite">
-            Ready to help
-          </span>
-        </span>
+        <strong>LocalBoost AI</strong>
+        <span><i></i><span id="lbChatStatus">Ready to help</span></span>
       </div>
 
       <button
         class="lb-chat-new"
         id="lbChatNew"
         type="button"
-        aria-label="Nayi chat shuru karein"
+        aria-label="Start a new chat"
         title="New chat"
       >
         <i class="bi bi-plus-lg" aria-hidden="true"></i>
@@ -46,93 +38,66 @@
         class="lb-chat-close"
         id="lbChatClose"
         type="button"
-        aria-label="Chat band karein"
+        aria-label="Close chat"
       >
-        <span aria-hidden="true">×</span>
+        ×
       </button>
     </header>
 
-    <div
-      class="lb-chat-body"
-      id="lbChatBody"
-      role="log"
-      aria-live="polite"
-      aria-relevant="additions text"
-      aria-label="Chat messages"
-    ></div>
+    <div class="lb-chat-body" id="lbChatBody" aria-live="polite"></div>
 
-    <div
-      class="lb-chat-quick-actions"
-      id="lbChatQuickActions"
-      aria-label="Suggested questions"
-    >
-      <button type="button" data-question="Namaste">
-        Namaste
+    <div class="lb-chat-quick-actions" id="lbChatQuickActions">
+      <button type="button" data-question="Home page kholo">
+        Home
       </button>
 
-      <button
-        type="button"
-        data-question="LocalBoost AI kya karta hai?"
-      >
-        LocalBoost kya hai?
+      <button type="button" data-question="Who is Shubham Jaiswal?">
+        Who is Shubham Jaiswal?
       </button>
 
-      <button
-        type="button"
-        data-question="Mujhe gym ke liye marketing idea do"
-      >
-        Gym marketing
+      <button type="button" data-question="Pricing page kholo">
+        Pricing
       </button>
 
-      <button
-        type="button"
-        data-question="Mujhe Instagram caption likhne mein help chahiye"
-      >
-        Caption help
+      <button type="button" data-question="Gym Plan page kholo">
+        Gym plan
       </button>
 
-      <button
-        type="button"
-        data-question="Mujhe padhai mein help chahiye"
-      >
-        Padhai help
+      <button type="button" data-question="What is LocalBoost AI? Simple mein samjhao.">
+        What is LocalBoost AI?
       </button>
 
-      <button
-        type="button"
-        data-question="Ek joke sunao"
-      >
+      <button type="button" data-question="Features page kholo">
+        Features
+      </button>
+
+      <button type="button" data-question="How it works page kholo">
+        How it works
+      </button>
+
+      <button type="button" data-question="Ek joke sunao.">
         Joke sunao
+      </button>
+
+      <button type="button" data-question="Shubham Jaiswal ke goals kya hain?">
+        Shubham ke goals
       </button>
     </div>
 
     <form class="lb-chat-form" id="lbChatForm">
-      <label class="visually-hidden" for="lbChatInput">
-        Apna message likhein
-      </label>
-
       <input
         id="lbChatInput"
-        name="message"
         type="text"
         placeholder="Kuch bhi poochhein..."
         autocomplete="off"
         maxlength="2000"
-        aria-label="Apna message likhein"
+        aria-label="Type your message"
       >
-
-      <button
-        id="lbChatSend"
-        type="submit"
-        aria-label="Message bhejein"
-        title="Send"
-      >
-        <i class="bi bi-arrow-up" aria-hidden="true"></i>
-      </button>
+      <button type="submit" aria-label="Send message">↑</button>
     </form>
 
     <p class="lb-chat-disclaimer">
-      Yeh saved answers dhoondhta hai, full AI nahi. Sensitive details share na karein.
+      shubham jaiswal, LocalBoost AI ke founder, aapke sawalon ka jawab dene ke liye yahan hai.
     </p>
   </section>
 </div>
